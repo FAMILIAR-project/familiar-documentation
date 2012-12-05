@@ -1,21 +1,20 @@
 
+ * [Feature model] (featuremodel.md)
+ * [Feature] (feature.md)
+ * [Feature groups] (fgroups.md)
+ * [Configuration] (configuration.md)
+ * [Constraint] (constraint.md)
 
-[Feature model] (featuremodel.md)
-[Feature] (feature.md)
-[Feature groups] (fgroups.md)
-[Configuration] (configuration.md)
-[Constraint] (constraint.md)
-
-[Set] (set.md)
-[Integer] (integer.md)
-[Boolean] (boolean.md)
-[String] (string.md)
+ * [Set] (set.md)
+ * [Integer] (integer.md)
+ * [Boolean] (boolean.md)
+ * [String] (string.md)
 
 
-[Basic language constructs] (basic-constructs.md)
+ * [Basic language constructs] (basic-constructs.md)
 
-[Cleanup] (cleanup.md)
-[KSynthesis] (ksynthesis.md)
+ * [Cleanup] (cleanup.md)
+ * [KSynthesis] (ksynthesis.md)
 
 
 
