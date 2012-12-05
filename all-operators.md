@@ -1,6 +1,6 @@
  * Domain-specific types
   * [Feature model] (featuremodel.md)
-   * formats (featuremodel.md#formats) 
+   * [formats] (featuremodel.md#formats) 
   * [Feature] (feature.md)
   * [Feature groups] (fgroups.md)
   * [Configuration] (configuration.md)
