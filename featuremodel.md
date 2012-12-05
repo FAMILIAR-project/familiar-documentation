@@ -1,18 +1,21 @@
+# Feature Models 
 
+## Specification
 
+Multiple notations are supported for specifying feature models. 
+It means you can: 
+ * load feature models in those notations (using '''FM''' constructor) ;
+ * serialize the feature models in those notations (using '''save''').
 
+### Formats
 
-## Formats supported
-
-We provide multiple notations for specifying feature models:
+The following formats are fully supported:
  * [SPLOT] (http://www.splot-research.org/), 
  * [FeatureIDE] (http://wwwiti.cs.uni-magdeburg.de/iti_db/research/featureide/), 
  * a subset of [TVL] (http://www.info.fundp.ac.be/~acs/tvl/), 
  * S2T2
- 
-It means you can: 
- * load feature models in those notations (using '''FM''' constructor) ;
- * serialize the feature models in those notations (using '''save''').
+ * an internal notation (see below)
+
 
 ## Internal notation
 
