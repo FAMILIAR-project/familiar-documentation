@@ -11,3 +11,5 @@ IsEmptySet : 'setIsEmpty' set=SetCommand ;
 SetToNames : 'names' set=SetCommand ;
 
                     | {SetOperation.left=current} sop=(SetOperator) right=ComplexCommand // TODO new!
+
+

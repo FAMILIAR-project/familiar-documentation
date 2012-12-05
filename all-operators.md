@@ -10,7 +10,7 @@ set.md
 feature.md
 ksynthesis.md
 basic-constructs.md
-string.md
+[String] [string.md]
  
 
 ComplexCommand : left=Command    
