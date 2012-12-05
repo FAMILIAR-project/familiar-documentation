@@ -1,16 +1,24 @@
-integer.md
-boolean.md
-cleanup.md  
-featuremodel.md
-constraint.md
-configuration.md
-fgroups.md
-set.md
-feature.md
-ksynthesis.md
-basic-constructs.md
 
+
+[Feature model] (featuremodel.md)
+[Feature] (feature.md)
+[Feature groups] (fgroups.md)
+[Configuration] (configuration.md)
+[Constraint] (constraint.md)
+
+[Set] (set.md)
+[Integer] (integer.md)
+[Boolean] (boolean.md)
 [String] (string.md)
+
+
+[Basic language constructs] (basic-constructs.md)
+
+[Cleanup] (cleanup.md)
+[KSynthesis] (ksynthesis.md)
+
+
+
  
 
 ComplexCommand : left=Command    
