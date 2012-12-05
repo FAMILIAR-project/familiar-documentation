@@ -1,4 +1,3 @@
-
 integer.md
 boolean.md
 cleanup.md  
@@ -10,7 +9,8 @@ set.md
 feature.md
 ksynthesis.md
 basic-constructs.md
-[String] [string.md]
+
+[String] (string.md)
  
 
 ComplexCommand : left=Command    
