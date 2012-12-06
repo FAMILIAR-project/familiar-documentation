@@ -1,6 +1,10 @@
 # merge
 
-The merge operator is used to merge two (or more than two) feature models and obtain an other feature model. The merge uses a name-based matching: two features match if and only if they have the same name. Several modes are defined for this operator. This mode indicates how the merge has to be done in terms of set of conﬁgurations preserved in the resulting feature model. 
+The merge operator is used to merge two (or more than two) feature models. 
+The result is another feature model. 
+The merge uses a name-based matching: two features match if and only if they have the same name. 
+Several modes are defined for this operator. 
+This mode indicates how the merge has to be done in terms of set of conﬁgurations preserved in the resulting feature model. 
 
 
 '''merge''' ''mode'' sfm 
