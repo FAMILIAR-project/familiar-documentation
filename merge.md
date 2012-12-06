@@ -7,19 +7,19 @@ Several modes are defined for this operator.
 This mode indicates how the merge has to be done in terms of set of conﬁgurations preserved in the resulting feature model. 
 
 
-'''merge''' ''mode'' sfm 
+**merge** *mode* sfm 
 
-''mode'' can be:
-  * '''intersection'''
-  * '''union''' (eq '''sunion''')
-  * '''diff'''
+*mode* can be:
+  * **intersection***
+  * **union** (eq **sunion**)
+  * **diff**
 
 sfm is a set of feature models, for example, you can use the following notation 
 
-{{{ { fm1, fm2, ..., fmn } }}} to represent a set of feature models fm1, fm2, ..., fmn.
+``{ fm1, fm2, ..., fmn }`` to represent the set of feature models fm1, fm2, ..., fmn.
 
 You can also use this notation:
-{{{ fm* }}} that represents a set of variables whose name begins with {{{fm}}}
+``fm*`` that represents a set of variables whose name begins with ``fm``
 
 
 ## merge intersection 
