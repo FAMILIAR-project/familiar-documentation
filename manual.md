@@ -19,6 +19,9 @@
  * [Environment (utilities)] (shell.md)
   
  * Operators
+  * [FM] (featuremodel.md)
+  * [constraint] (constraint.md)
+  * [constraints] (constraint.md)
   * [cleanup] (cleanup.md)
   * [ksynthesis] (ksynthesis.md)
   * [merge] (merge.md)
@@ -32,6 +35,20 @@
   * [asFM] (asFM.md) 
   * [counting] (counting.md)
   * [isValid] (isValid.md)
+  * [configs] (configs.md)
+  * [configuration] (configuration.md)
+  * [select] (configuration.md)
+  * [deselect] (configuration.md)
+  * [unselect] (configuration.md)
+  * [selectedF] (configuration.md)
+  * [deselectedF] (configuration.md)
+  * [unselectedF] (configuration.md)
+  * [autoselect] (configuration.md#autoselect)
+  * [root] (root.md)
+  * [children] (children.md)
+  * [parent] (parent.md)
+  * [sibling] (sibling.md)
+  * [operator] (voperator.md)
 
 
 

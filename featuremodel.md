@@ -302,16 +302,10 @@ Cliques : 'cliques' fm=FMCommand ; // cliques (aka atomic sets?)
 
 // isDead? isCore? isFullMandatory? can be written with an FML script
 
+[counting] (counting.md)
+[isValid] (isValid.md)
+[configs] (configs.md)
 
-AnalysisOperation :
-    op=('isValid' // validity of a FM
-    | 'counting'  // number of products of a FM
-    | 'configs' // set of products of a FM
-
-    | 'root' // return the root feature of the fm
-    | 'features' // return the set of features
-    ) fm=(FMCommand|ConfigurationCommand)
-    ;
 
 
 [compare] (compare.md)
