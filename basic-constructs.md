@@ -20,3 +20,9 @@ ForeachSet : 'foreach' LEFT_PAREN val=FML_IDENTIFIER 'in' var=FML_IDENTIFIER RIG
 ## Comparison                   
                   
 {ComparisonOperation.left=current} cmpOp=(ComparisonOperator) right=ComplexCommand 
+
+enum ComparisonOperator : EQUAL='eq'|NotEqual='neq'|LesserThan='<'|GreaterThan='>'|REF_EQUAL='=='|REF_NotEqual='!='; //| IntegerOperator ) ;
+
+## Assertion 
+
+'assert' LEFT_PAREN assertion=ComplexCommand RIGHT_PAREN ; // should be a BooleanOperation

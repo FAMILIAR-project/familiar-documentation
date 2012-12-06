@@ -323,6 +323,7 @@ CTCRCommand : 'ctcr' fm=FMCommand ;
 
 /****** COMPOSITION OPERATORS ***********/
 
+[merge] (merge.md)
 
 Merge: 'merge' mode=MergeMode 
             ((LEFT_BRACKET
@@ -341,6 +342,8 @@ AggregateMerge: 'aggregateMerge' mode=MergeMode
             RIGHT_BRACKET) 
              | fms=LFMArgs) ;
 
+[aggregate] (aggregate.md)
+
 Aggregate : 'aggregate' ((LEFT_BRACKET
 					 (fms+=FMCommand)+
 								 RIGHT_BRACKET) 
@@ -350,7 +353,7 @@ Aggregate : 'aggregate' ((LEFT_BRACKET
 ## Decomposition
 
    
-
+[slice] (slicing.md)
 Slice : 'slice' fm=FMCommand mode=SliceMode fts=SetCommand ; // issue: side effect or purely functional?
 
 enum SliceMode : INCLUDING='including' | EXCLUDING='excluding' ;
