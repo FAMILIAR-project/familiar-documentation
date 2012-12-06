@@ -19,22 +19,16 @@ The manual documents all the operations and facilities provided by FAMILIAR
   * [String] (string.md)
 
  * [Basic language constructs] (basic-constructs.md)
-
+  
  * Operators
   * [cleanup] (cleanup.md)
-  * [kSynthesis] (ksynthesis.md)
+  * [ksynthesis] (ksynthesis.md)
   * [merge] (merge.md)
 
 
 
  
 
-ComplexCommand : left=Command    
-                   
-                    | {ComparisonOperation.left=current} cmpOp=(ComparisonOperator) right=ComplexCommand //(IntegerCommand|BCommand)
-
-                    )?
-                | not?='not' batom=ComplexCommand ;   
    
 Command :     (LEFT_PAREN ComplexCommand RIGHT_PAREN)
             | (
