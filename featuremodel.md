@@ -269,11 +269,16 @@ fm3: (FEATURE_MODEL) A: (E|C|F)+ B ;
 
 ## Editing (2)
 
-FeatureModelOperation : Insert | EditOperation | Extract ;
-EditOperation : (RemoveFeature|RenameFeature) ;
+[insert] (insert.md)
 Insert : 'insert' aspectfm=FMCommand 'into' baseft=FTCommand 'with' op=VariabilityOpCommand ; //TODO:  op2=(FML_IDENTIFIER)?  ;
+
+[renameFeature] (renameFT.md)
+[removeFeature] (removeFT.md)
+
 RemoveFeature : 'removeFeature' feature=FTCommand ;
 RenameFeature : 'renameFeature' feature=FTCommand 'as' featureNew=(StrCommand) ; //'in' fm=FML_IDENTIFIER ;
+
+[extract] (extract.md)
 Extract: 'extract' rootfeature=FTCommand ;
 
 
@@ -302,13 +307,14 @@ AnalysisOperation :
     op=('isValid' // validity of a FM
     | 'counting'  // number of products of a FM
     | 'configs' // set of products of a FM
-    | 'nbFeatures' // number of features
+
     | 'root' // return the root feature of the fm
     | 'features' // return the set of features
     ) fm=(FMCommand|ConfigurationCommand)
     ;
 
 
+[compare] (compare.md)
 Compare :
     'compare' fm_left=FMCommand fm_right=FMCommand;    // Boolean formula?
 
@@ -363,6 +369,10 @@ enum SliceMode : INCLUDING='including' | EXCLUDING='excluding' ;
 
 PairwiseCommand : 'pw' fm=FMCommand ('minimization=' minimization=IntegerCommand)? ('partial=' partial=IntegerCommand)? ;
 
-ksynthesis
+[ksynthesis] (ksynthesis.md)
+
+[asFM] (asFM.md)
 AsFM : 'asFM' conf=ConfigurationCommand;
+
+[cleanup] (cleanup.md)
 CleanUp : 'cleanup' fm=FMCommand ; // functional style?

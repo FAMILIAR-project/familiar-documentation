@@ -24,6 +24,14 @@
   * [merge] (merge.md)
   * [slice] (slicing.md) 
   * [aggreagte] (aggregate.md)
+  * [renameFeature] (renameFT.md)
+  * [removeFeature] (removeFT.md)
+  * [insert] (insert.md)
+  * [extract] (extract.md)
+  * [compare] (compare.md)
+  * [asFM] (asFM.md) 
+  * [counting] (counting.md)
+  * [isValid] (isValid.md)
 
 
 
