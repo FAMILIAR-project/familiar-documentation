@@ -15,8 +15,9 @@
  * [Basic language constructs] (basic-constructs.md)
 
  * Operators
-  * [Cleanup] (cleanup.md)
-  * [KSynthesis] (ksynthesis.md)
+  * [cleanup] (cleanup.md)
+  * [kSynthesis] (ksynthesis.md)
+  * [merge] (merge.md)
 
 
 
