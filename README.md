@@ -1,6 +1,7 @@
-FAMILIAR manual 
+FAMILIAR documentation
 ======
 
-The manual documents all the operations and facilities provided by FAMILIAR
-
-(in progress)
+This repository contains:
+ * The manual that documents all the operations and facilities provided by the FAMILIAR language (in progress)
+ * Presentations made in international events or used for teaching FAMILIAR 
+ * Scripts associated to the presentations or the manual   
