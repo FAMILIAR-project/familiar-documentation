@@ -29,9 +29,9 @@ and packaged tools to interactively play with the models during the tutorial.
 FAMILIAR instructions: (TODO link)
 
 
-## TVL
+### TVL
 
-Note that FAMILIAR supports TVL models in Boolean forms and therefore does include TVL...
+Note that FAMILIAR supports TVL models in Boolean forms and therefore does include TVL. 
 If you're specifically interested by TVL, you can visit  http://info.fundp.ac.be/tvl/ (including grammar, resources describing formal semantics, standalone implementation, etc.)
 
 
