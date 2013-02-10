@@ -1,5 +1,7 @@
 # FAMILIAR Manual
 
+The manual describes the main concepts, operators and constructs/facilities of the FAMILIAR language.
+
  * Domain-specific types
   * [Feature model] (featuremodel.md)
     	* [formats] (featuremodel.md#formats) 
