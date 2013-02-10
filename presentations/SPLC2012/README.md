@@ -2,12 +2,9 @@
 
 The tutorial has been presented at SPLC'12 conference 
 
-> This tutorial aims at presenting new feature modelling
-> tools directly applicable to a wide range of variability prob-
-> lems and application domains. Techniques and languages
-> for modelling, managing and conguring feature models will
-> be illustrated and explained to participants (practitioners or
-> academics, beginners or advanced).
+> This tutorial aims at presenting new feature modelling tools directly applicable to a wide range of variability problems and application domains. 
+> Techniques and languages (FAMILIAR, TVL) for modelling, managing and configuring feature models will
+> be illustrated and explained to participants (practitioners or academics, beginners or advanced).
 
 ## Authors
 
