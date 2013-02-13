@@ -53,6 +53,8 @@ The manual describes the main concepts, operators and constructs/facilities of t
   * [parent] (parent.md)
   * [sibling] (sibling.md)
   * [operator] (voperator.md)
+  * // compute groups
+  * // computeImplies/Excludes
 
 
 
