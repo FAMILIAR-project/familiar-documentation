@@ -13,4 +13,4 @@ This document presents:
  * numerous examples (toy examples or based on the revisit of existing works)
  * the associated FAMILIAR scripts as well as the packaged version to play with the tool
 
-Our ultimate goal is to provide a comprehensive set of solutions that fulfills the various needs of variability model composition. 
+Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition. 
