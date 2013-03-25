@@ -44,3 +44,5 @@ fm7 = slice fm5 including s7
 // 2. with local slicing
 fm8 = ksynthesis fm5 over fm5.R*
 ```
+
+![Image](../compositionTutorial/fm1.png?raw=true)
