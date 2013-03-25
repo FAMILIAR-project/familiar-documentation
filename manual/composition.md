@@ -99,7 +99,7 @@ More details can be found in ECMFA'10 paper or PhD thesis (see references below)
 ##### Reference-based approach 
 
 The merge operator previously described is very suited when 
- * the maching and merging of features are rather simple (based on names)
+ * the maching and merging of features are rather simple (i.e., the matching strategy is one-to-one, based on names, and the composed feature model contains features with same names) 
  * the configuration semantics can be denoted in the Boolean logic
  
 However there are practical situations in which the matching/merging strategy is much more complicated. 
@@ -108,7 +108,9 @@ Moreover the merge operator looses the traceability with the input feature model
 
 Therefore a natural idea is to '''reference''' input feature models. 
 A "composed" view is specified, containing the features that are of interest for the composition. 
-Then features of the composed view "reference" features of input feature models through (logical) constraints.
+Then features of the composed view "reference" features of input feature models through (logical) constraints. 
+
+Combined with advanced mechanisms such as slicing or local synthesis, we can actually implement a merge-like operator.
 
 
 
