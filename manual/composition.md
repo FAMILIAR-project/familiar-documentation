@@ -15,6 +15,8 @@ This document presents:
 
 Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
 
+
+
 ### A first example 
 
 Let us consider the following FAMILIAR script: 
@@ -74,6 +76,8 @@ fml> counting fm4
 res4: (DOUBLE) 18.0
 ```
 
+##### Merge operator
+
 The magic is in the merge operator. 
 The principle of the merge operator can be summarized as follows:
  * two features match iff they have the same name (F2 of fm1 matches with F2 of fm2 and F2 of fm3)
@@ -88,12 +92,31 @@ F2: [F6] [F5] ;
 (F3 -> F1);
 ```
 
-The internal implementations are also worth to describe. The principle is to encode each feature model as a formula and then computes a "composed" formula. 
+The internal details of the merge implementation are also worth to describe. The principle is to encode each feature model as a formula and then computes a "composed" formula. 
 This can be achieved by '''denoting''' into the Boolean logic the configuration semantics (e.g., of "union"). 
+More details can be found in ECMFA'10 paper or PhD thesis (see references below). 
+
+##### Reference-based approach 
+
+The merge operator previously described is very suited when 
+ * the maching and merging of features are rather simple (based on names)
+ * the configuration semantics can be denoted in the Boolean logic
+ 
+However there are practical situations in which the matching/merging strategy is much more complicated. 
+Similar observations can be made for the configuration semantics: the "union" is not always what the users want. 
+Moreover the merge operator looses the traceability with the input feature models. 
+
+Therefore a natural idea is to '''reference''' input feature models. 
+A "composed" view is specified, containing the features that are of interest for the composition. 
+Then features of the composed view "reference" features of input feature models through (logical) constraints.
 
 
 
+### Acknowledgements 
 
+We thanks MODELS'12 and SPLC'12 participants of the tutorial "Next-Generation Model-based Variability Management : Languages and Tools" for providing early feedbacks on the composition mechanisms offered by FAMILIAR. 
+
+### Resources and References 
 
 ![Image](compositionTutorial/fm1.png?raw=true)
 ![Image](compositionTutorial/fm2.png?raw=true)
