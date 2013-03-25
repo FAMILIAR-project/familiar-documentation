@@ -45,4 +45,4 @@ fm7 = slice fm5 including s7
 fm8 = ksynthesis fm5 over fm5.R*
 ```
 
-![alt text]![Image](compositionTutorial/fm1.png?raw=true)
+![alt text](compositionTutorial/fm1.png?raw=true)
