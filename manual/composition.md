@@ -1,4 +1,4 @@
-### Composing your Compositions of Variability Models
+# Composing your Compositions of Variability Models
 
  * Mathieu Acher (University of Rennes 1, Inria / Irisa, Triskell team)
  * Benoit Combemale (University of Rennes 1, Inria / Irisa, Triskell team)
@@ -15,12 +15,10 @@ This document presents:
 
 Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
 
-## A first example 
+### A first example 
 
 Let us consider the following FAMILIAR script: 
-
-{{{
-
+```
 MacBook-Pro-de-Mathieu-3:MODELS13 macher1$ cat testMODELSFirstExample.fml
 fm1 = FM (S : [F1] F2 [F4] ; F2 : (F5|F6) ; ) // F1, F4 optionals, F5 and F6 mutually exclusive 
 fm2 = FM (S : F1 F2 [F3] ; F2 : [F5] [F6] ; ) // F5,F6 still subfeatures of F2 but optionals, F1 mandatory 
@@ -45,5 +43,4 @@ fm7 = slice fm5 including s7
 
 // 2. with local slicing
 fm8 = ksynthesis fm5 over fm5.R*
-
-}}}
+```
