@@ -68,6 +68,13 @@ Likewise, each configuration authorized in the composed feature model correspond
 fm4 is such a feature model
 
 ```
+fml> fm4
+fm4: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+```
+
+```
 fml> s4 = configs fm4
 s4: (SET) {{S;F1;F4;F2};{F4;S;F2};{F6;S;F1;F3;F2};{F2;F4;F6;S};{S;F5;F2;F4};{F3;F1;F2;S};{F2;F5;S;F1};{F6;F1;S;F2};{F2;F1;F5;S;F3};{F2;F1;F6;S;F4;F5};{S;F2;F1};{F3;S;F5;F2;F1;F6};{F6;S;F2};{F2;S;F5};{S;F6;F2;F4;F1};{F4;F2;F1;S;F5};{F2;S};{F1;F6;F5;F2;S}}
 fml> size s4
@@ -85,13 +92,6 @@ The principle of the merge operator can be summarized as follows:
  * depending on the sets of configuration we want (e.g., union) the variability information is synthesized accordingly. For instance, F3 and F4 are mutually exclusive (forming a Mutex-group, i.e., at most 1 of the features can be selected), F1 logically implies F3 or F2 is mandatory.
  * the feature hierarchy tries to retain as much as possible parent-child relationships in the input feature models. In particular, F5 and F6 are subfeatures of F2
  
-```
-fml> fm4
-fm4: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
-F2: [F6] [F5] ; 
-(F3 -> F1);
-```
-
 The internal details of the merge implementation are also worth to describe. The principle is to encode each feature model as a formula and then computes a "composed" formula. 
 This can be achieved by '''denoting''' into the Boolean logic the configuration semantics (e.g., of "union"). 
 More details can be found in ECMFA'10 paper or PhD thesis (see references below). 
