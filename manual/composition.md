@@ -17,7 +17,7 @@ Our ultimate goal is to provide solutions that fulfill the various needs of vari
 
 
 
-### A first example 
+## A first example 
 
 Let us consider the following FAMILIAR script: 
 ```
@@ -83,7 +83,7 @@ fml> counting fm4
 res4: (DOUBLE) 18.0
 ```
 
-##### Merge operator
+### Merge operator
 
 The magic is in the merge operator. 
 The principle of the merge operator can be summarized as follows:
@@ -96,21 +96,36 @@ The internal details of the merge implementation are also worth to describe. The
 This can be achieved by '''denoting''' into the Boolean logic the configuration semantics (e.g., of "union"). 
 More details can be found in ECMFA'10 paper or PhD thesis (see references below). 
 
-##### Reference-based approach 
+### Reference-based approach 
 
 The merge operator previously described is very suited when 
- * the maching and merging of features are rather simple (i.e., the matching strategy is one-to-one, based on names, and the composed feature model contains features with same names) 
+ * the maching and merging of features are rather basic (i.e., the matching strategy is one-to-one, based on names, and the composed feature model contains features with same names) 
  * the configuration semantics can be denoted in the Boolean logic
  
 However there are practical situations in which the matching/merging strategy is much more complicated. 
 Similar observations can be made for the configuration semantics: the "union" is not always what the users want. 
 Moreover the merge operator looses the traceability with the input feature models. 
 
-Therefore a natural idea is to '''reference''' input feature models. 
-A "composed" view is specified, containing the features that are of interest for the composition. 
-Then features of the composed view "reference" features of input feature models through (logical) constraints. 
+Therefore a natural idea is to **reference** input feature models. 
+A ***composed view***, containing the features that are of interest for the composition, is specified, 
+Then features of the view "reference" features of input feature models through (logical) constraints. 
 
-Combined with advanced mechanisms such as slicing or local synthesis, we can actually implement a merge-like operator.
+Combined with advanced mechanisms such as slicing or local synthesis, we will show that we can actually implement a merge-like operator. 
+Such compositional mechanisms are more general and should be preferred in case, as a user of FAMILIAR, you want to customize the matching/merging strategy as well as the configuration and ontological semantics. 
+
+#### Aggregate 
+
+
+
+#### AggregateMerge
+
+
+#### With Slicing
+
+
+
+#### With Local Synthesis
+
 
 
 
