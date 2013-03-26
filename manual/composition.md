@@ -132,10 +132,11 @@ fm5bis = aggregate { cfm1 cfm2 cfm3 fm5View } withMapping csts
 
 #### AggregateMerge
 
-For implementing the ***union*** mode, the constraints to be specified can be huge. 
+For implementing the union mode (or another like intersection), the constraints to be specified can be huge. 
 Another (more technical) problem is that the aggreagate operator assumes that features' names are unique (in order to make a distinction between features). 
 
-Therefore we develop and provide another operator, called **aggregateMerge** 
+Therefore we develop and provide another operator, called **aggregateMerge**. 
+It takes as input a set of feature models and a "mode" (e.g., union, intersection).
 
 ```
 // reference-based
@@ -169,6 +170,18 @@ fm1_F2: (fm1_F5|fm1_F6) ;
 (F5 <-> ((fm1_F5 | fm3_F5) | fm2_F5));
 ```
 
+The interest of the aggregated feature model, here **fm5**, is that you have a semantically equivalent representation of the set of configurations. 
+
+```
+fml> c5 = configuration fm5
+c5: (CONFIGURATION) selected: [MergeCST, S, F2, InputFMs]   deselected: [fm1_F3, fm2_F4, fm3_F3]
+fml> select F3 in c5
+res1: (BOOLEAN) true
+fml> selectedF c5
+res2: (SET) {fm2_F1;F3;fm2_F2;F2;S;F1;MergeCST;fm2_S;InputFMs;fm2_F3}
+fml> deselectedF c5
+res3: (SET) {fm2_F4;fm3_F4;fm3_F5;fm3_F1;F4;fm3_F3;fm1_F1;fm1_F4;fm1_F6;fm1_F2;fm3_F2;fm1_F5;fm1_S;fm3_F6;fm1_F3;fm3_S}
+```
 
 #### With Slicing
 
