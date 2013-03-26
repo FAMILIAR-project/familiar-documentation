@@ -143,7 +143,7 @@ It takes as input a set of feature models and a "mode" (e.g., union, intersectio
 fm5 = aggregateMerge union { fm1 fm2 fm3 }
 ```
 
-It generates automatically (1) the view (2) the constraints and (3) aggregate both inputs with automatic renamings (see below on the previous example).
+It automatically generates (1) the view (2) the constraints and (3) aggregate both inputs with automatic renamings (see below on the previous example).
 
 ```
 fml> fm5
@@ -170,7 +170,11 @@ fm1_F2: (fm1_F5|fm1_F6) ;
 (F5 <-> ((fm1_F5 | fm3_F5) | fm2_F5));
 ```
 
-The interest of the aggregated feature model, here **fm5**, is that you have a semantically equivalent representation of the set of configurations. 
+The interest of the aggregated feature model, here **fm5**, is that you have a ***semantically equivalent*** representation of the set of configurations. 
+Indeed, the combinations of features authorized in the composed "view" of fm5 are exactly the same as in fm4, thus realizing the configuration semantics of union. 
+
+An example is given below. Selecting F3 in the view automatically selects the root of fm2 and deselects features of fm1 and fm3.
+You can also notice that F2 is selected by default since F2 is included in every configuration of fm1, fm2 or fm3. 
 
 ```
 fml> c5 = configuration fm5
@@ -184,6 +188,14 @@ res3: (SET) {fm2_F4;fm3_F4;fm3_F5;fm3_F1;F4;fm3_F3;fm1_F1;fm1_F4;fm1_F6;fm1_F2;f
 ```
 
 #### With Slicing
+
+A major problem with the previous solution is that features are all optionals in the "view".   
+
+```
+fml> fm6 = extract fm5.S
+fm6: (FEATURE_MODEL) S: [F4] [F1] [F2] [F3] ; 
+F2: [F6] [F5] ;
+```
 
 
 
