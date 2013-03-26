@@ -44,7 +44,7 @@ s7 = { fm5.S } ++ fm5.S.*
 fm7 = slice fm5 including s7
 
 // 2. with local slicing
-fm8 = ksynthesis fm5 over fm5.R*
+fm8 = ksynthesis fm5 over s7
 ```
 
 The script loads three feature models fm1, fm2 and fm3 (the rest of the script will be explained in detail hereafter).
