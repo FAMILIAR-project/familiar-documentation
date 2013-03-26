@@ -187,9 +187,9 @@ fml> deselectedF c5
 res3: (SET) {fm2_F4;fm3_F4;fm3_F5;fm3_F1;F4;fm3_F3;fm1_F1;fm1_F4;fm1_F6;fm1_F2;fm3_F2;fm1_F5;fm1_S;fm3_F6;fm1_F3;fm3_S}
 ```
 
-#### With Slicing
+#### A first limit: the quality of the view
 
-A major problem with the previous solution is that features are all optionals in the "view".   
+A major problem with the previous solution is that features are all optionals in the "view" (we will see some other problems in the remainder)   
 
 ```
 fml> fm6 = extract fm5.S
@@ -197,12 +197,95 @@ fm6: (FEATURE_MODEL) S: [F4] [F1] [F2] [F3] ;
 F2: [F6] [F5] ;
 ```
 
+As a result, you cannot use the view (fm6) independently. Furthermore the view contains anomalies, since the syntactical constructs are not conformant to the actual meaning. 
+In particular, F2 is not optional but actually mandatory ; F3 and F4 are mutually exclusive ; F3 implies the selection of F1. 
+It is clearly not the case in fm6 (see above) that is a very rough over-approximation of the actual configuration set. 
 
+Two techniques are conceivable for improving the quality of the "view".
+
+#### With Slicing
+
+A first one is to rely on the **slice** operator. 
+It takes as input a feature model and a set of features (slicing criterion). 
+It computes a new feature model containing only the features of the slicing criterion.
+Importantly the resulting feature model characterizes the *projected set of configurations* onto the slicing criterion. 
+In our case, we are only interested by features of the view (see s7 below) and we slice fm5 (resulting from the aggregateMerge operator) with s7. 
+
+```
+fml> s7
+s7: (SET) {F5;F3;F2;F1;F6;S;F4}
+fml> fm7 = slice fm5 including s7
+fm7: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+```
+
+Intuitively, the projected set of configurations is the same set of configurations of the input feature model ***without*** the features not in the slicing criterion. 
+
+```
+cs5 = configs fm5
+actualConfView = setEmpty
+foreach (cf in cs5) do
+    si = setIntersection cf s7
+    setAdd actualConfView si
+end
+```
+
+```
+fml> cs5
+cs5: (SET) {{fm1_S;fm1_F2;F2;F5;MergeCST;S;fm1_F5;InputFMs};{S;F1;fm2_F2;F6;InputFMs;F2;F5;fm2_S;fm2_F6;fm2_F1;MergeCST;fm2_F5};{fm1_F4;F5;InputFMs;F4;fm1_S;fm1_F2;F2;S;MergeCST;fm1_F5};{MergeCST;F2;fm3_F4;fm3_F2;fm3_F5;F5;InputFMs;fm3_F1;S;F4;F1;fm3_S};{MergeCST;S;F6;F2;fm1_F2;fm1_S;fm1_F6;InputFMs};{fm2_F2;fm2_F1;fm2_S;F5;InputFMs;MergeCST;fm2_F5;S;F1;F2};{S;F1;fm3_F1;F2;fm3_F6;F6;MergeCST;fm3_F2;InputFMs;fm3_S};{fm3_S;F2;fm3_F1;fm3_F5;fm3_F2;F1;S;InputFMs;fm3_F6;F6;F5;MergeCST};{MergeCST;S;F1;fm2_S;F2;fm2_F1;InputFMs;fm2_F2};{fm3_F4;S;MergeCST;InputFMs;F4;fm3_F2;F1;fm3_F1;fm3_F6;F2;fm3_S;F6};{InputFMs;F5;fm2_F2;F1;F3;fm2_S;S;MergeCST;F2;fm2_F3;fm2_F5;fm2_F1};{fm3_F2;fm3_S;InputFMs;S;F2;fm3_F1;fm3_F4;F1;F4;MergeCST};{S;fm1_F6;fm1_F2;F4;F2;InputFMs;F6;MergeCST;fm1_F4;fm1_S};{fm2_S;F2;InputFMs;fm2_F3;fm2_F1;F3;fm2_F2;F1;F5;fm2_F5;MergeCST;fm2_F6;F6;S};{F2;fm3_F1;S;InputFMs;F1;fm3_F2;MergeCST;fm3_S};{F6;F2;fm1_F2;fm1_S;fm1_F1;fm1_F6;S;MergeCST;InputFMs;F1};{InputFMs;fm2_F6;fm2_S;F6;S;MergeCST;F1;F2;fm2_F2;fm2_F1};{F5;fm3_S;F2;InputFMs;fm3_F2;fm3_F1;fm3_F5;S;MergeCST;F1};{fm2_F1;InputFMs;MergeCST;F1;F6;F2;F3;fm2_F2;S;fm2_F3;fm2_F6;fm2_S};{F4;F1;fm1_F2;fm1_F6;MergeCST;InputFMs;F2;fm1_F4;F6;fm1_S;fm1_F1;S};{F4;fm3_F4;InputFMs;fm3_F2;F2;S;MergeCST;fm3_S};{InputFMs;fm1_S;F1;F2;S;fm1_F2;fm1_F5;F5;fm1_F1;MergeCST};{F2;S;F6;InputFMs;fm3_F2;fm3_F6;fm3_S;MergeCST};{fm1_F2;F1;InputFMs;fm1_F5;F4;MergeCST;F2;S;fm1_F4;F5;fm1_F1;fm1_S};{S;fm3_S;InputFMs;F4;fm3_F6;MergeCST;fm3_F4;fm3_F2;F6;F2};{InputFMs;MergeCST;fm3_S;fm3_F2;F2;S};{F4;F6;F5;fm3_F4;InputFMs;S;fm3_F6;fm3_F2;fm3_S;MergeCST;fm3_F5;fm3_F1;F2;F1};{InputFMs;MergeCST;fm2_S;F2;S;fm2_F2;F3;fm2_F3;F1;fm2_F1}}
+fml> actualConfView
+actualConfView: (SET) {{S;F2};{F1;S;F2};{F4;F2;S};{S;F2;F6};{S;F4;F2;F6};{F2;F5;F4;S;F1};{S;F2;F3;F1};{F1;S;F6;F2;F5};{F5;S;F1;F2};{F5;F1;F3;S;F2};{F1;F5;F2;F6;F3;S};{S;F1;F2;F6};{S;F4;F1;F2;F6};{F5;S;F4;F2;F1;F6};{F1;F3;F2;F6;S};{F5;F4;F2;S};{F2;F5;S};{S;F2;F1;F4}}
+fml> actualConfView eq configs fm4
+res1: (BOOLEAN) true
+```
+
+Obviously, the slice operator is **not** internally implemented like this. Enumerating all configurations and then computing the projected configurations with set operations is not efficient and scalable even for small feature models. 
+Instead a Boolean formula, free for non relevant variables, is computed and then satisfiability techniques are used to synthesize a comprehensive feature model.
+
+A key benefit is that the computed feature model fm7 is exactly the same as fm4. The formulas are exactly the same as well as the synthesized feature diagram.
+
+```
+fml> compare fm4 fm7
+res2: (STRING) REFACTORING
+fml> hierarchy fm4 eq hierarchy fm7
+res6: (BOOLEAN) true
+```
 
 #### With Local Synthesis
 
+Another strategy for correcting the "view" of fm5 is possible. 
+Instead of computing a new Boolean formula (like with the slice, see above), we can directly exploit the original formula of fm5 and perform ***over*** the relevant Boolean variables.
 
+```
+> fm8 = ksynthesis fm5 over s7
+fm8: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+```
 
+The resulting feature model fm8 seems to be the same as fm4 and fm7. 
+But that's not the case.
+
+```
+fml> compare fm8 fm7
+res1: (STRING) GENERALIZATION
+``` 
+
+The reason is that the synthesized feature diagram is an over-approximation of the actual set of configurations we want. 
+
+```
+fml> cs4 = configs fm4
+cs4: (SET) {{S;F2};{F6;F2;S;F1;F4};{F6;F3;S;F2;F1;F5};{F1;F6;S;F2};{S;F1;F2};{F6;F5;F1;F2;S};{F1;F6;F2;F5;S;F4};{F6;F2;S};{F5;F2;S;F1};{F2;S;F6;F3;F1};{F4;F5;F2;S};{F5;F2;S;F4;F1};{F5;F2;S};{F5;F1;S;F2;F3};{S;F1;F3;F2};{F2;S;F1;F4};{F4;S;F2};{S;F2;F6;F4}}
+fml> cs7 = configs fm7
+cs7: (SET) {{F1;F3;F2;S};{F6;S;F4;F2};{F2;S;F1;F4};{F4;S;F2;F1;F6};{F6;F5;S;F2;F1};{F2;F5;S;F4};{F2;F6;S};{F2;S;F1};{F2;F5;F6;F1;S;F4};{F2;S;F1;F5};{F2;S;F1;F6};{F2;S;F4};{F2;F1;S;F4;F5};{S;F2;F5};{F2;S;F6;F3;F1};{F2;S};{F1;F2;S;F3;F5};{F6;S;F5;F1;F3;F2}}
+fml> cs8 = configs fm8
+cs8: (SET) {{F4;F6;S;F2};{F5;F2;F6;S};{S;F5;F2};{F2;F5;F6;F1;S};{S;F2;F4;F1};{F5;F2;S;F4};{F3;F1;F6;S;F5;F2};{S;F5;F1;F2;F4};{S;F6;F2};{F2;F1;S;F3};{F5;F6;F2;F4;F1;S};{S;F2;F3;F1;F5};{F1;S;F2};{F2;F1;F6;S};{F2;F6;F4;F5;S};{F1;S;F5;F2};{S;F4;F2};{F2;S};{S;F6;F2;F4;F1};{F2;F3;F6;S;F1}}
+fml> cs7 eq cs4
+res2: (BOOLEAN) true
+fml> setDiff cs8 cs7
+res3: (SET) {{F5;F2;F6;S};{F2;F6;F4;F5;S}}
+```
 
 ### Acknowledgements 
 
