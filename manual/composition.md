@@ -115,9 +115,59 @@ Such compositional mechanisms are more general and should be preferred in case, 
 
 #### Aggregate 
 
+To implement a reference-based approach, a natural approach is to execute the following steps:
+ * define the composed view
+ * define the set of constraints to establish correspondences with input features 
+ * aggregate the composed view, the constraints as well as the input feature models together 
 
+Using FAMILIAR, it can be implemented with something like: 
+```
+cfm1 = copy fm1
+cfm2 = copy fm2
+cfm3 = copy fm3
+fm5View = FM (S : [F1] [F2] [F3] [F4] ; F2 : [F5] [F6] ; )
+csts = constraints (F1 -> (fm1.F1 or fm2.F1 or .. ; )
+fm5bis = aggregate { cfm1 cfm2 cfm3 fm5View } withMapping csts
+```
 
 #### AggregateMerge
+
+For implementing the ***union*** mode, the constraints to be specified can be huge. 
+Another (more technical) problem is that the aggreagate operator assumes that features' names are unique (in order to make a distinction between features). 
+
+Therefore we develop and provide another operator, called **aggregateMerge** 
+
+```
+// reference-based
+fm5 = aggregateMerge union { fm1 fm2 fm3 }
+```
+
+It generates automatically (1) the view (2) the constraints and (3) aggregate both inputs with automatic renamings (see below on the previous example).
+
+```
+fml> fm5
+fm5: (FEATURE_MODEL) MergeCST: S InputFMs ; 
+S: [F4] [F1] [F2] [F3] ; 
+InputFMs: (fm3_S|fm1_S|fm2_S) ; 
+F2: [F6] [F5] ; 
+fm3_S: [fm3_F1] [fm3_F4] [fm3_F3] fm3_F2 ; 
+fm2_S: fm2_F1 [fm2_F4] fm2_F2 [fm2_F3] ; 
+fm1_S: [fm1_F1] [fm1_F4] [fm1_F3] fm1_F2 ; 
+fm3_F2: [fm3_F5] [fm3_F6] ; 
+fm2_F2: [fm2_F5] [fm2_F6] ; 
+fm1_F2: (fm1_F5|fm1_F6) ; 
+(fm3_F5 -> fm3_F1);
+(F6 <-> ((fm3_F6 | fm2_F6) | fm1_F6));
+!fm1_F3;
+(F1 <-> ((fm3_F1 | fm2_F1) | fm1_F1));
+(F2 <-> ((fm2_F2 | fm1_F2) | fm3_F2));
+(F3 <-> ((fm3_F3 | fm2_F3) | fm1_F3));
+(F4 <-> ((fm1_F4 | fm2_F4) | fm3_F4));
+!fm2_F4;
+!fm3_F3;
+(S <-> ((fm2_S | fm1_S) | fm3_S));
+(F5 <-> ((fm1_F5 | fm3_F5) | fm2_F5));
+```
 
 
 #### With Slicing
