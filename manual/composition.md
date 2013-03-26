@@ -47,7 +47,7 @@ fm7 = slice fm5 including s7
 fm8 = ksynthesis fm5 over fm5.R*
 ```
 
-The script loads three feature models fm1, fm2 and fm3. 
+The script loads three feature models fm1, fm2 and fm3 (the rest of the script will be explained in detail hereafter).
 Note that fm1, fm2 and fm3 actually correspond to feature models used in the paper "Supplier independent feature modelling" by Herman Hartmann, Tim Trew, Aart A. J. Matsinger, SPLC'09 (191-200).
 
 We want to compose the three feature models. 
@@ -94,7 +94,7 @@ The principle of the merge operator can be summarized as follows:
  
 The internal details of the merge implementation are also worth to describe. The principle is to encode each feature model as a formula and then computes a "composed" formula. 
 This can be achieved by '''denoting''' into the Boolean logic the configuration semantics (e.g., of "union"). 
-More details can be found in ECMFA'10 paper or PhD thesis (see references below). 
+A hierarchy is then automatically selected and variability information is synthesized (more details can be found in ECMFA'10 paper or PhD thesis, see references below). 
 
 ### Reference-based approach 
 
@@ -107,7 +107,7 @@ Similar observations can be made for the configuration semantics: the "union" is
 Moreover the merge operator looses the traceability with the input feature models. 
 
 Therefore a natural idea is to **reference** input feature models. 
-A ***composed view***, containing the features that are of interest for the composition, is specified, 
+A ***composed view***, containing the features that are of interest for the composition, is specified. 
 Then features of the view "reference" features of input feature models through (logical) constraints. 
 
 Combined with advanced mechanisms such as slicing or local synthesis, we will show that we can actually implement a merge-like operator. 
