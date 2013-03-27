@@ -1,5 +1,14 @@
 # Composing your Compositions of Variability Models
 
+This document presents: 
+ * a comprehensive tutorial on feature model composition, showing the equivalence of various operators and mechanims offered by the FAMILIAR language
+ * numerous examples (toy examples or based on the revisit of existing works)
+ * the associated FAMILIAR scripts as well as the packaged version to play with the tool
+
+Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
+
+##### Authors
+
  * Mathieu Acher (University of Rennes 1, Inria / Irisa, Triskell team)
  * Benoit Combemale (University of Rennes 1, Inria / Irisa, Triskell team)
  * Philippe Collet (University of Nice Sophia Antipolis)
@@ -7,24 +16,14 @@
  * Philippe Lahire (University of Nice Sophia Antipolis)
  * Robert B. France (Colorado State University)
 
-This document presents: 
- 
- * a comprehensive tutorial on feature model composition, showing the equivalence of various operators and mechanims offered by the FAMILIAR language
- * numerous examples (toy examples or based on the revisit of existing works)
- * the associated FAMILIAR scripts as well as the packaged version to play with the tool
-
-Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
-
-
-
 ## A first example 
 
 Let us consider the following FAMILIAR script: 
 ```
 MacBook-Pro-de-Mathieu-3:MODELS13 macher1$ cat testMODELSFirstExample.fml
 fm1 = FM (S : [F1] F2 [F4] ; F2 : (F5|F6) ; ) // F1, F4 optionals, F5 and F6 mutually exclusive 
-fm2 = FM (S : F1 F2 [F3] ; F2 : [F5] [F6] ; ) // F5,F6 still subfeatures of F2 but optionals, F1 mandatory 
-fm3 = FM (S : [F1] F2 [F4] ; F2 : [F5] [F6] ; F5 -> F1 ; )
+fm2 = FM (S : F1 F2 [F3] ; F2 : [F5] [F6] ; ) // F5, F6 still subfeatures of F2 but optionals, F1 mandatory 
+fm3 = FM (S : [F1] F2 [F4] ; F2 : [F5] [F6] ; F5 -> F1 ; ) // F5 implies F1
 
 // you can also play with TVL, featureide, SPLOT or other formats if you want
 // serialize fm3 into featureide 
@@ -309,6 +308,23 @@ sense, F56 abstracts features F5 and F6 since no distinction is made between F5 
 We give an implementation in FAMILIAR below, using **aggregate**
 
 ```
+macher:MODELS13 macher1$ cat testMODELSExample2.fml 
+// same as first example
+fm1 = FM (S : [F1] F2 [F4] ; F2 : (F5|F6) ; ) // F1, F4 optionals, F5 and F6 mutually exclusive 
+fm2 = FM (S : F1 F2 [F3] ; F2 : [F5] [F6] ; ) // F5, F6 still subfeatures of F2 but optionals, F1 mandatory 
+fm3 = FM (S : [F1] F2 [F4] ; F2 : [F5] [F6] ; F5 -> F1 ; )
+
+fmNewView = FM (S : [F8] [F56] ; F8 : [F3] [F4] ; )
+
+csts = constraints (F56 <-> (fm1_F5 or fm2_F5 or fm3_F5 or fm1_F6 or fm2_F6 or fm3_F6) ; 
+F4 <-> (fm1_F4 or fm3_F4) ; 
+F3 <-> fm2_F3 ; 
+F8 <-> (fm2_F3 or fm1_F4 or fm3_F4) ; 
+)
+
+fm4bis = aggregate --renamings { fmNewView fm1 fm2 fm3 } withMapping csts
+
+fm5bis= slice fm4bis including fmNewView.*
 ```
 
 ## Acknowledgements 
