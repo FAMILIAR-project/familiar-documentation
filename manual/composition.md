@@ -94,7 +94,7 @@ The principle of the merge operator can be summarized as follows:
  
 The internal details of the merge implementation are also worth to describe. The principle is to encode each feature model as a formula and then computes a "composed" formula. 
 This can be achieved by '''denoting''' into the Boolean logic the configuration semantics (e.g., of "union"). 
-A hierarchy is then automatically selected and variability information is synthesized (more details can be found in ECMFA'10 paper or PhD thesis, see references below). 
+A hierarchy is then automatically selected and variability information is synthesized (more details can be found in ECMFA'10 paper or PhD thesis, see references [1] [2] below). 
 
 ### Reference-based approach 
 
@@ -260,6 +260,7 @@ res6: (BOOLEAN) true
 
 Another strategy for correcting the "view" of fm5 is possible. 
 Instead of computing a new Boolean formula (like with the slice, see above), we can directly exploit the original formula of fm5 and perform ***over*** the relevant Boolean variables.
+We thus adapt the operator *ksynthesis* so that the synthesis procedure performs over the set of features specified. 
 
 ```
 > fm8 = ksynthesis fm5 over s7
@@ -292,8 +293,23 @@ res3: (SET) {{F5;F2;F6;S};{F2;F6;F4;F5;S}}
 ```
 
 The local synthesis procedure, as other synthesis procedure, makes it best for producing a maximal feature diagram. 
-But it is well-known that feature diagrams offer syntactical constructs that are not expressively complete wrt Boolean logics. 
+But it is well-known that feature diagrams offer syntactical constructs that are not expressively complete wrt Boolean logics. It is the case of fm8 that authorizes two configurations not valid in fm4 and fm7 (i.e., fm8 is a "generalization" of fm4 and fm7).
 
+## Second Example: Customizing your Composition 
+
+As previously stated, there are situations in which the matching/merging strategy is not one-to-one and based on feature names. Moreover, the combinations of features legal in the composed feature model can be more tricky. 
+
+We consider again the same feature models fm1, fm2 and fm3 and this time we want to build a view that does not necessarily include all the original details or feature names:
+ * F56 is mapped to features F5 and F6 of input feature models. The intuition
+is that either selecting F5 or F6 is sufficient to realize the feature F56. In a
+sense, F56 abstracts features F5 and F6 since no distinction is made between F5 and F6 at the level of abstraction of the view ; 
+ * F1 is no longer present in the composed view. It is another form of abstraction: unnecessary details are removed ;
+ * another feature, named F8, is present in the view and aims to better structure the feature model, considering that features F3 and F4 are ontologically closed.
+
+We give an implementation in FAMILIAR below, using **aggregate**
+
+```
+```
 
 ## Acknowledgements 
 
