@@ -295,11 +295,18 @@ The local synthesis procedure, as other synthesis procedure, makes it best for p
 But it is well-known that feature diagrams offer syntactical constructs that are not expressively complete wrt Boolean logics. 
 
 
-### Acknowledgements 
+## Acknowledgements 
 
 We thanks MODELS'12 and SPLC'12 participants of the tutorial "Next-Generation Model-based Variability Management : Languages and Tools" for providing early feedbacks on the composition mechanisms offered by FAMILIAR. 
 
-### Resources and References 
+## Resources and References 
+
+[1] Acher, M.: Managing Multiple Feature Models: Foundations, Language and Applications.
+PhD thesis (2011)
+
+[2] M. Acher, P. Collet, P. Lahire, and R. France. Comparing Approaches to Implement
+Feature Model Composition. In Proc. of ECMFA’10, volume 6138 of LNCS, pages
+3–19, 2010.
 
 ![Image](compositionTutorial/fm1.png?raw=true)
 ![Image](compositionTutorial/fm2.png?raw=true)
