@@ -126,16 +126,16 @@ cfm1 = copy fm1
 cfm2 = copy fm2
 cfm3 = copy fm3
 fm5View = FM (S : [F1] [F2] [F3] [F4] ; F2 : [F5] [F6] ; )
-csts = constraints (F1 -> (fm1.F1 or fm2.F1 or .. ; )
+csts = constraints (F1 -> (fm1_F1 or fm2_F1 or .. ; )
 fm5bis = aggregate { cfm1 cfm2 cfm3 fm5View } withMapping csts
 ```
 
 #### AggregateMerge
 
-For implementing the union mode (or another like intersection), the constraints to be specified can be huge. 
+For implementing the union mode (or another like intersection), the constraints to be specified can be huge, thus making the process time-consuming and error-prone.
 Another (more technical) problem is that the aggreagate operator assumes that features' names are unique (in order to make a distinction between features). 
 
-Therefore we develop and provide another operator, called **aggregateMerge**. 
+Therefore we develop and provide another operator to automate this task, called **aggregateMerge**. 
 It takes as input a set of feature models and a "mode" (e.g., union, intersection).
 
 ```
