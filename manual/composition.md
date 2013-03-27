@@ -127,7 +127,7 @@ cfm2 = copy fm2
 cfm3 = copy fm3
 fm5View = FM (S : [F1] [F2] [F3] [F4] ; F2 : [F5] [F6] ; )
 csts = constraints (F1 -> (fm1_F1 or fm2_F1 or .. ; )
-fm5bis = aggregate { cfm1 cfm2 cfm3 fm5View } withMapping csts
+fm5bis = aggregate --renamings { cfm1 cfm2 cfm3 fm5View } withMapping csts
 ```
 
 #### AggregateMerge
