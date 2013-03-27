@@ -323,9 +323,83 @@ F8 <-> (fm2_F3 or fm1_F4 or fm3_F4) ;
 )
 
 fm4bis = aggregate --renamings { fmNewView fm1 fm2 fm3 } withMapping csts
-
-fm5bis= slice fm4bis including fmNewView.*
 ```
+
+The view can be updated afterwards using either ksynthesis or slice
+
+```
+fm5bis = slice fm4bis including fmNewView.*
+```
+
+and you can play with the feature models
+
+```
+fml> fm4bis
+fm4bis: (FEATURE_MODEL) fm4bis: fm3_S S fm2_S fm1_S ; 
+fm3_S: [fm3_F1] [fm3_F4] fm3_F2 ; 
+S: [F8] [F56] ; 
+fm2_S: fm2_F1 fm2_F2 [fm2_F3] ; 
+fm1_S: [fm1_F1] [fm1_F4] fm1_F2 ; 
+fm3_F2: [fm3_F5] [fm3_F6] ; 
+F8: [F4] [F3] ; 
+fm2_F2: [fm2_F5] [fm2_F6] ; 
+fm1_F2: (fm1_F5|fm1_F6) ; 
+(fm3_F5 -> fm3_F1);
+(F3 <-> fm2_F3);
+(F56 <-> (((((fm1_F5 | fm2_F5) | fm3_F5) | fm1_F6) | fm2_F6) | fm3_F6));
+(F8 <-> ((fm2_F3 | fm1_F4) | fm3_F4));
+(F4 <-> (fm1_F4 | fm3_F4));
+fml> fm5bis
+fm5bis: (FEATURE_MODEL) S: [F8] F56 ; 
+F8: (F4|F3)+ ;
+fml> c4 = configuration fm4bis
+c4: (CONFIGURATION) selected: [fm4bis, fm2_F2, S, fm1_F2, fm2_F1, fm1_S, F56, fm2_S, fm3_S, fm3_F2]   deselected: []
+```
+
+## Third Example: Ontological Semantics Issue
+
+Let us consider the following FAMILIAR script
+
+```
+macher:MODELS13 macher1$ cat testMODELSOntological2.fml 
+fm1 = FM (A : B ; B : C ; )
+fm2 = FM (A : B ; B : [C] ; )
+fm3 = FM (A : [C] [B] ; )
+fm4 = merge union { fm1 fm2 fm3 }
+fm5 = aggregateMerge union { fm1 fm2 fm3 }
+s1 = fm1.*
+fm6 = slice fm5 including s1
+```
+
+The resulting composed feature model fm4, supposed to represent the union of configurations sets of fm1, fm2 and fm3 is correct
+
+```
+fml> fm4
+fm4: (FEATURE_MODEL) A: [B] [C] ;
+fml> cs4 = configs fm4
+cs4: (SET) {{A};{C;A};{A;B};{B;C;A}}
+```
+
+However fm6, resulting from the combination of aggregateMerge and slicing, is not:
+```
+fml> fm6
+fm6: (FEATURE_MODEL) A: [B] ; 
+B: [C] ;
+fml> cs6 = configs fm6
+cs6: (SET) {{A;B};{C;B;A};{A}}
+```
+
+If we look at the difference between fm4 and fm6
+```
+> setDiff cs4 cs6
+res3: (SET) {{C;A}}
+```
+
+We can notice that one configuration is not possible in fm6 whereas it should be the case as in fm4. 
+The reason is that the hierarchy of fm6 preclues the configuration **{C, A}**, since the feature *C* is parent of *B*. 
+Therefore there exists no configuration of fm6 in which *C* can be selected without *B*. 
+
+
 
 ## Acknowledgements 
 
