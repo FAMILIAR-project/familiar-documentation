@@ -399,7 +399,7 @@ We can notice that one configuration is not possible in fm6 whereas it should be
 The reason is that the hierarchy of fm6 preclues the configuration **{C, A}**, since the feature *C* is parent of *B*. 
 Therefore there exists no configuration of fm6 in which *C* can be selected without *B*. 
 
-##### Hierarchy selection: going into details
+##### Hierarchy Selection: Going Into Details
 
 The feature hierarchy of the view is computed, *by default*, as follows: the parent-child relationships of the first input feature model are added, then the others. 
 If a feature already has a parent, the parent-child relationship is not added. Intuitively, the first "hierarchy" predominates over the others. 
@@ -420,6 +420,26 @@ Likewise we can obtain a sound and complete feature model
 fml> compare fm6bis fm4
 res5: (STRING) REFACTORING
 ```
+
+##### Tuning the Hierarchy
+
+It may happen that the retained hierarchy, though sound and complete, is not meaninful and breaks the intended ontological semantics. 
+For instance, applying a "flatten" strategy to the first example (see above) would produce a hierarchy in which F5 and F6 are no longer child features of F2 whereas it is the case in the three input feature models. 
+
+Therefore users should be able to fine tune the hierarchy in the composed feature model. 
+It is an error-prone process. 
+
+The key is that a sound and complete hierarchy is necessarily a spanning tree of the implication graph. 
+It can be computed as follows:
+
+```
+fml> computeImplies fm5bis over s1
+res9: (SET) {(B -> A);(C -> A)}
+```
+
+(Note that we introduce a new possibility with the keyword *over*. 
+The computation of the implication graph is performed on the Boolean formula by only considering relevant features -- in the same style as with ksynthesis).
+
 
 ## Acknowledgements 
 
