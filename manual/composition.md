@@ -399,7 +399,27 @@ We can notice that one configuration is not possible in fm6 whereas it should be
 The reason is that the hierarchy of fm6 preclues the configuration **{C, A}**, since the feature *C* is parent of *B*. 
 Therefore there exists no configuration of fm6 in which *C* can be selected without *B*. 
 
+##### Hierarchy selection: going into details
 
+The feature hierarchy of the view is computed, *by default*, as follows: the parent-child relationships of the first input feature model are added, then the others. 
+If a feature already has a parent, the parent-child relationship is not added. Intuitively, the first "hierarchy" predominates over the others. 
+As we can see on the example above, it can have dramatic consequences and precludes some valid configurations. 
+
+Therefore users can specify another strategy when using the aggregateMerge. 
+One alternative strategy is "flat": all features are located below the root. 
+It has the advantage of not over-constraining the view (like with C -> B).
+
+```
+fm5bis = aggregateMerge --hierarchy=flat union { fm1 fm2 fm3 }
+fm6bis = slice fm5bis including s1
+```
+
+Likewise we can obtain a sound and complete feature model
+
+```
+fml> compare fm6bis fm4
+res5: (STRING) REFACTORING
+```
 
 ## Acknowledgements 
 
