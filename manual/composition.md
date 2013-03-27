@@ -47,7 +47,7 @@ fm8 = ksynthesis fm5 over s7
 ```
 
 The script loads three feature models fm1, fm2 and fm3 (the rest of the script will be explained in detail hereafter).
-Note that fm1, fm2 and fm3 actually correspond to feature models used in the paper "Supplier independent feature modelling" by Herman Hartmann, Tim Trew, Aart A. J. Matsinger, SPLC'09 (191-200).
+Note that fm1, fm2 and fm3 actually correspond to feature models used in the paper [3] "Supplier independent feature modelling" by Herman Hartmann, Tim Trew, Aart A. J. Matsinger, SPLC'09.
 
 We want to compose the three feature models. 
 In particular, we are targeting the following scenario. fm1, fm2 and fm3 are representing three product lines maintained by three different suppliers. 
@@ -339,6 +339,8 @@ PhD thesis (2011)
 [2] M. Acher, P. Collet, P. Lahire, and R. France. Comparing Approaches to Implement
 Feature Model Composition. In Proc. of ECMFA’10, volume 6138 of LNCS, pages
 3–19, 2010.
+
+[3] Herman Hartmann, Tim Trew, Aart A. J. Matsinger, Supplier independent feature modelling. In Proc. of SPLC'09 (191-200).
 
 ![Image](compositionTutorial/fm1.png?raw=true)
 ![Image](compositionTutorial/fm2.png?raw=true)
