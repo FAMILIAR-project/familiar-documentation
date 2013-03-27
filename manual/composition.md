@@ -172,9 +172,11 @@ fm1_F2: (fm1_F5|fm1_F6) ;
 
 The interest of the aggregated feature model, here **fm5**, is that you have a ***semantically equivalent*** representation of the set of configurations. 
 Indeed, the combinations of features authorized in the composed "view" of fm5 are exactly the same as in fm4, thus realizing the configuration semantics of union. 
+It is straightforward to understand why: the constraints force the selection of at least one and at most one corresponding feature (if any)  in the input feature models. 
 
 An example is given below. Selecting F3 in the view automatically selects the root of fm2 and deselects features of fm1 and fm3.
 You can also notice that F2 is selected by default since F2 is included in every configuration of fm1, fm2 or fm3. 
+You can play with c5 and verify that every valid configuration involving features of the view are also valid in fm4. 
 
 ```
 fml> c5 = configuration fm5
@@ -187,9 +189,9 @@ fml> deselectedF c5
 res3: (SET) {fm2_F4;fm3_F4;fm3_F5;fm3_F1;F4;fm3_F3;fm1_F1;fm1_F4;fm1_F6;fm1_F2;fm3_F2;fm1_F5;fm1_S;fm3_F6;fm1_F3;fm3_S}
 ```
 
-#### A first limit: the quality of the view
+#### On the Quality of the View
 
-A major problem with the previous solution is that features are all optionals in the "view" (we will see some other problems in the remainder)   
+A major problem with the previous solution is that features are all optionals in the "view" (we will see some other problems in the remainder).   
 
 ```
 fml> fm6 = extract fm5.S
@@ -198,8 +200,9 @@ F2: [F6] [F5] ;
 ```
 
 As a result, you cannot use the view (fm6) independently. Furthermore the view contains anomalies, since the syntactical constructs are not conformant to the actual meaning. 
-In particular, F2 is not optional but actually mandatory ; F3 and F4 are mutually exclusive ; F3 implies the selection of F1. 
-It is clearly not the case in fm6 (see above) that is a very rough over-approximation of the actual configuration set. 
+In particular, F2 is modeled as optional but is actually mandatory ; F3 and F4 are mutually exclusive ; F3 implies the selection of F1. 
+It is clearly not the case in fm6 (see above). It is a very rough over-approximation of the actual configuration set. 
+Therefore it not acceptable to exploit fm6 afterwards.
 
 Two techniques are conceivable for improving the quality of the "view".
 
@@ -241,7 +244,8 @@ res1: (BOOLEAN) true
 ```
 
 Obviously, the slice operator is **not** internally implemented like this. Enumerating all configurations and then computing the projected configurations with set operations is not efficient and scalable even for small feature models. 
-Instead a Boolean formula, free for non relevant variables, is computed and then satisfiability techniques are used to synthesize a comprehensive feature model.
+Instead a Boolean formula, free for non relevant variables, is computed. 
+Then satisfiability techniques are used to synthesize a comprehensive feature model.
 
 A key benefit is that the computed feature model fm7 is exactly the same as fm4. The formulas are exactly the same as well as the synthesized feature diagram.
 
@@ -265,7 +269,7 @@ F2: [F6] [F5] ;
 ```
 
 The resulting feature model fm8 seems to be the same as fm4 and fm7. 
-But that's not the case.
+But this is not the case.
 
 ```
 fml> compare fm8 fm7
@@ -286,6 +290,10 @@ res2: (BOOLEAN) true
 fml> setDiff cs8 cs7
 res3: (SET) {{F5;F2;F6;S};{F2;F6;F4;F5;S}}
 ```
+
+The local synthesis procedure, as other synthesis procedure, makes it best for producing a maximal feature diagram. 
+But it is well-known that feature diagrams offer syntactical constructs that are not expressively complete wrt Boolean logics. 
+
 
 ### Acknowledgements 
 
