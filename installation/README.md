@@ -25,8 +25,7 @@ Available here:
 [1.0.7](../release/FML-basic-1.0.7.jar)
 
 ```
-> java -Xmx1024M -jar FML-basic-1.0.7.jar --help
-```
+java -jar -Xmx1024M ../release/FML-basic-1.0.7.jar --help
 
 Usage: java FML
                 [-v|--verbose] [-h|--help] [--version] [(-p|--path)[:paths1,paths2,...,pathsN ]] [(-o|--output) <output>] [<filename>]
@@ -48,45 +47,47 @@ Usage: java FML
 
   [<filename>]
         FAMILIAR file to interpret.
-        
-(Option -o is no longer active at the moment, "output" is the default folder)
+```
+
 
 Here is an example session:
 
 ```
-$ java -Xmx1024M -jar FML-basic-1.0.7.jar foo.fml 
+scriptsRepository $ java -jar -Xmx1024M ../release/FML-basic-1.0.7.jar foo.fml 
 FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
 http://familiar-project.github.com/
 fml> ls
-(FEATURE_MODEL, completeName: fm1, ns:) fm1 = A: [D] B C ; (D -> C);
-(FEATURE_MODEL, completeName: fm3, ns:) fm3 = R: S [T] U ; (!U -> !S);
-(FEATURE_MODEL, completeName: fm2, ns:) fm2 = W: [X] Y Z ; (X <-> Y);
+(FEATURE_MODEL) fm3
+(FEATURE_MODEL) fm1
+(FEATURE_MODEL) fm2
 fml> fm1
-fm1: (FEATURE_MODEL) A: [D] B C ; (D -> C);
+fm1: (FEATURE_MODEL) A: [D] B C ; 
+(D -> C);
 fml> renameFeature fm1.A as "AAA"
 res0: (BOOLEAN) true
 fml> fm1
-fm1: (FEATURE_MODEL) AAA: [D] B C ; (D -> C);
+fm1: (FEATURE_MODEL) AAA: [D] B C ; 
+(D -> C);
 fml> c1 = configuration fm1
-c1: (CONFIGURATION) selected: [AAA, B, C] 	 deselected: []
-fml> c1
-c1: (CONFIGURATION) selected: [AAA, B, C] 	 deselected: []
-fml> autoSelect c1 MAX
+c1: (CONFIGURATION) selected: [AAA, B, C]   deselected: []
+fml> select D in c1
 res1: (BOOLEAN) true
 fml> c1
 c1: (CONFIGURATION) selected: [D, AAA, B, C] 	 deselected: []
 fml> c2 = configuration fm1
 c2: (CONFIGURATION) selected: [AAA, B, C] 	 deselected: []
+fml> 
+
 ```
 
 Another more funny session is here. 
-Look at the poster, the "corresponding" FAMILIAR [attachment:poster.fml script] and the FAMILIAR output below:
+Look at the poster, the "corresponding" FAMILIAR script [poster.fml](../scriptsRepository/poster.fml) and the FAMILIAR output below:
 
 ```
-> java -jar FML-1.0.7.jar 
-FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.3 (beta)
+scriptsRepository macher1$ java -jar -Xmx1024M ../release/FML-basic-1.0.7.jar 
+FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
 http://familiar-project.github.com/
-fml> run "FML-scripts/poster.fml"
+fml> run "poster.fml"
 fmASE: (FEATURE_MODEL) Slicing: Technique [FutureWork] Motivation Paper Algorithm Support ; 
 Technique: (ReasoningWithTwoKindsOfVariability|UpdatingAndExtractingViews|ReconcilingFMs)+ ; 
 Motivation: (MultipleInterRelatedFMs|LargeAndComplexFMs)+ ; 
@@ -112,13 +113,14 @@ Language;
 fmSemantics: (FEATURE_MODEL) Semantics: Hierarchy SetOfConfigurations ;
 fmAlgorithm: (FEATURE_MODEL) Algorithm: RootSupport SupportForConstraints SemanticsAware ;
 fmEnvironment: (FEATURE_MODEL) Slicing: Technique [CaseStudy] ; 
-Technique: (UpdatingAndExtractingViews|ReasoningWithTwoKindsOfVariability|ReconcilingFMs)+ ; 
+Technique: (ReasoningWithTwoKindsOfVariability|UpdatingAndExtractingViews|ReconcilingFMs)+ ; 
 CaseStudy: (MedicalImagingWorkflows|VideoSurveillanceProcessingChains|ReverseEngineeringSoftwareArchitecture) ;
-fmSupport: (FEATURE_MODEL) Support: Language Environment Automation ; 
-Environment: Eclipse [Standalone] TextualEditor ; 
+fmSupport: (FEATURE_MODEL) Support: Language Environment Automation TextualEditor ; 
+Environment: Eclipse [Standalone] ; 
 Automation: (SAT|BDD)+ ;
 rootE: (FEATURE) Slicing
-res0: (BOOLEAN) true
+res4: (BOOLEAN) true
+fml> 
 ```
 
 ### Eclipse Plugin 
