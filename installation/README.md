@@ -8,7 +8,10 @@ We provide different solutions for using FAMILIAR:
 
 ### FAMILIAR environment
 
-This is the standalone graphical version, or simply called the **FAMILIAR Environment**. The tool was developed using Java with Prefuse visualization toolkit and AWT/Swing. It offers fully integrated modeling environment which includes the FAMILIAR Editor, Console and Language. It is designed to provide an intuitive and easy to use user interface allowing (non-expert) users to build Feature Models and reason about them.
+This is the standalone graphical version, or simply called the **FAMILIAR Environment**. 
+The tool was developed using Java with Prefuse visualization toolkit and AWT/Swing. 
+It offers fully integrated modeling environment which includes the FAMILIAR Editor, Console and Language. 
+It is designed to provide an intuitive and easy to use user interface allowing (non-expert) users to build Feature Models and reason about them.
 
 Watch the FAMILIAR Tool demo on Screencast.com: http://www.screencast.com/t/1oJBNwvw5f41
 
@@ -125,9 +128,9 @@ fml>
 
 ### Eclipse Plugin 
 
-**The Eclipse update site is down, we will fix it ASAP**
+*The Eclipse update site is down, we will fix it ASAP*
 
-**The Eclipse plugin requires Java 1.6 and Eclipse Juno (>= 4.2) with Xtext 2.0**
+*The Eclipse plugin requires Java 1.6 and Eclipse Juno (>= 4.2) with Xtext 2.0*
 
 
 
