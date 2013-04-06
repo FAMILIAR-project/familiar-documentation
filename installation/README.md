@@ -1,94 +1,27 @@
 # Downloading and Installing FAMILIAR
 
-Stay tuned for updates!
- * current version: '''1.0.7 (beta)''' 
- * We have moved to Xtext 2.0 and so last Eclipse versions (Juno)
- * '''The Eclipse update site is down, we will fix it ASAP'''
-
 We provide different solutions for using FAMILIAR:
-  * FAMILIAR environment, fully integrated modeling standalone app that can be executed as JAR file.
+  * FAMILIAR environment, fully integrated modeling standalone app that can be executed as JAR file ; 
   * A plugin for the Eclipse platform, integrated with [http://wwwiti.cs.uni-magdeburg.de/iti_db/research/featureide FeatureIDE] ;
   * Another standalone version that supports console mode only.
 
 
 ### FAMILIAR environment
 
-This is the standalone graphical version, or simply called the '''FAMILIAR Tool'''. The tool was developed using Java with Prefuse visualization toolkit and AWT/Swing. It offers fully integrated modeling environment which includes the FAMILIAR Editor, Console and Language. It is designed to provide an intuitive and easy to use user interface allowing non-expert users to build Feature Models and reason about them.
-
-The following graph shows the architecture of the FAMILIAR Tool:
-
-[[Image(wiki:readme:FAMILIARToolArchitecture.png, 35%)]]
-
-
-The following graph shows the main window view of the FAMILIAR Editor:
-
-[[Image(wiki:readme:FAMILIARTool-Main-v0.9.9.9.png, 65%)]]
-
+This is the standalone graphical version, or simply called the **FAMILIAR Environment**. The tool was developed using Java with Prefuse visualization toolkit and AWT/Swing. It offers fully integrated modeling environment which includes the FAMILIAR Editor, Console and Language. It is designed to provide an intuitive and easy to use user interface allowing (non-expert) users to build Feature Models and reason about them.
 
 Watch the FAMILIAR Tool demo on Screencast.com: http://www.screencast.com/t/1oJBNwvw5f41
 
-The FAMILIAR Tool is available for download as a JAR file: http://mathieuacher.com/pub/FAMILIAR/FML-editor-1.0.3.jar
-
-This version is developed by Aleksandar Jakšić (Colorado State University) 
-
-=== Eclipse Plugin === 
-
-'''The Eclipse update site is down, we will fix it ASAP'''
-
-'''The Eclipse plugin requires Java 1.6 and Eclipse Juno (>= 4.2) with Xtext 2.0''' 
-
-All dependent Eclipse projects or libraries (FeatureIDE, JavaBDD) are included 
-either in the standalone version or in the Eclipse plugin version. 
-You do not need FeatureIDE. 
-Note that it is not possible to use an existing version of FeatureIDE since we have made some changes to the FeatureIDE code. 
-
-
-Installing the Eclipse plugin via the update site-method:
-	- Open eclipse.
-	- Go to Help -> Install new software then click on "Add" button.
-	- A dialog frame will be shown with tow fields
-		The first is for the name.
-		The second one is for the URL of the plugin. Paste the following link '''http://www.i3s.unice.fr/~acher/familiar/''' and validate
-	- Select "FAMILIAR" in the new frame and click on "Next" and click again on "Next" if there is no dependence error is reported.
-	- Click on "Finish" and restart your Eclipse. Your plugin should now be available.
-	
-Hint for MacOS users:
-Select the cocoa-x86_64 version of Eclipse (there are some issues with SWT related to some MacOS versions)
-
-
-==== Starting with the Eclipse Plugin (highly recommended to read) ====
-
-Once you have installed FAMILIAR in the Eclipse environment, you should have an Eclipse menu called FAMILIAR. 
-At this step, I suggest not to use the entry "Top Level" but to create a new Eclipse project, with a new file called foo.fml 
-("fml" is the file extension supported by FAMILIAR). You can edit your FAMILIAR file with the FAMILIAR editor. 
-Let say you write something like:
-
-```
-// foo.fml
-fm1 = FM (A : B C [D]; D -> C; )
-fm2 = FM (W : [X] Y Z; X <-> Y ; )
-fm3 = FM (R : S [T] U; !U -> !S; ) 
-```
-
-At this step, you can right click on foo.fml and "Run as FAMILIAR script..." executes the script foo.fml. 
-
-Some variables should appear in the FAMILIAR environment view. 
-You can double click on variables to obtain a visual representation (using FeatureIDE editors). 
-You also have an access to the top level. 
-Type {{{ls}}} for instance to display the list of variables. 
-Or simply {{{fm1}}}. 
-Or new commands like:
-
-```renameFeature fm1.A as "AAA"```
+The FAMILIAR Tool is available for download as a JAR file: 
+TODO FML-environment-1.0.7.jar
 
 
 
-=== Standalone version (simple one) ===
+### Basic environment
 
-The standalone version is simply a JAR file.
+The standalone version is simply a JAR file that supports console mode only. 
 
 Available here:
-
 TODO
 
 ```
@@ -121,7 +54,6 @@ Usage: java FML
 Here is an example session:
 
 ```
-
 $ java -Xmx1024M -jar FML-1.0.7.jar foo.fml 
 FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
 http://familiar-project.github.com/
@@ -145,7 +77,6 @@ fml> c1
 c1: (CONFIGURATION) selected: [D, AAA, B, C] 	 deselected: []
 fml> c2 = configuration fm1
 c2: (CONFIGURATION) selected: [AAA, B, C] 	 deselected: []
-
 ```
 
 Another more funny session is here. 
@@ -190,7 +121,12 @@ rootE: (FEATURE) Slicing
 res0: (BOOLEAN) true
 ```
 
+### Eclipse Plugin 
 
-[[Image(wiki:WikiStart:ASE-poster-Slicing2.png, 25%)]]
+**The Eclipse update site is down, we will fix it ASAP**
+
+**The Eclipse plugin requires Java 1.6 and Eclipse Juno (>= 4.2) with Xtext 2.0**
+
+
 
 
