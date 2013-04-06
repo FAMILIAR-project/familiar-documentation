@@ -1,0 +1,34 @@
+fmASE = FM (Slicing : [FutureWork] Paper Support Motivation Algorithm Technique ; 
+      	Paper : (Demonstration|Long|Short)+ ; Demonstration: CaseStudy ; 
+	      CaseStudy: (VideoSurveillanceProcessingChains|MedicalImagingWorkflows|ReverseEngineeringSoftwareArchitecture) ; 
+	      		 Support: [Automation] [Language] [Environment] ; Automation: (BDD|SAT)+ ; 
+			 	  Environment: (Standalone|Eclipse)+ [Editors] ;Editors : [GraphicalEditor] [TextualEditor] ; 
+				  	       Motivation : (LargeAndComplexFMs|MultipleInterRelatedFMs)+ ; 
+					       		  Algorithm : [SupportForConstraints] [CorrectiveCapabilities] [RootSupport] [Semantics] (SyntacticalTechnique|SemanticsAware) [PropositionalLogics] ; Semantics: Hierarchy [SetOfConfigurations] ; 
+							  	    Technique: (ReasoningWithTwoKindsOfVariability|ReconcilingFMs|UpdatingAndExtractingViews)+ ; 
+								    	       Algorithm <-> Semantics ; Algorithm <-> CorrectiveCapabilities ; 
+									       		 Algorithm <-> RootSupport ; CorrectiveCapabilities -> SupportForConstraints ; 
+											 	   CorrectiveCapabilities -> SemanticsAware ; SetOfConfigurations <-> SemanticsAware ;
+												   			  SemanticsAware -> Automation ; Language -> TextualEditor ; Language ;TextualEditor -> Eclipse ;  )
+
+// let slice
+fmSemantics = slice fmASE including { Semantics Hierarchy SetOfConfigurations }
+
+// let slice again
+fmAlgorithm = slice fmASE including { Algorithm SupportForConstraints RootSupport SemanticsAware }
+
+// let slice again
+fmEnvironment = slice fmASE including { Slicing CaseStudy 
+	      	      	    VideoSurveillanceProcessingChains
+						MedicalImagingWorkflows 
+											ReverseEngineeringSoftwareArchitecture
+														Technique ReasoningWithTwoKindsOfVariability ReconcilingFMs 
+															  				     		    UpdatingAndExtractingViews } 
+																					    			       	  
+
+
+// let slice again
+fmSupport = slice fmASE including { Support Automation SAT BDD Language Environment Standalone Eclipse TextualEditor }
+	    
+rootE = root fmEnvironment
+renameFeature rootE as "Environment" 
