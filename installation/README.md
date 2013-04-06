@@ -22,10 +22,10 @@ The FAMILIAR Tool is available for download as a JAR file:
 The standalone version is simply a JAR file that supports console mode only. 
 
 Available here:
-TODO
+[1.0.7](../release/FML-basic-1.0.7.jar)
 
 ```
-> java -Xmx1024M -jar FML-1.0.7s.jar --help
+> java -Xmx1024M -jar FML-basic-1.0.7.jar --help
 ```
 
 Usage: java FML
@@ -54,7 +54,7 @@ Usage: java FML
 Here is an example session:
 
 ```
-$ java -Xmx1024M -jar FML-1.0.7.jar foo.fml 
+$ java -Xmx1024M -jar FML-basic-1.0.7.jar foo.fml 
 FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
 http://familiar-project.github.com/
 fml> ls
