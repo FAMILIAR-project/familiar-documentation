@@ -13,7 +13,7 @@ This is the standalone graphical version, or simply called the **FAMILIAR Enviro
 Watch the FAMILIAR Tool demo on Screencast.com: http://www.screencast.com/t/1oJBNwvw5f41
 
 The FAMILIAR Tool is available for download as a JAR file: 
-TODO FML-environment-1.0.7.jar
+[1.0.7](../release/FML-environment-1.0.7.jar)
 
 
 
