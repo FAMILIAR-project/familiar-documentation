@@ -1,0 +1,10 @@
+fm1 = FM (A : B ; B : C ; )
+fm2 = FM (A : B ; B : [C] ; )
+fm3 = merge union { fm1 fm2 }
+fm4 = aggregateMerge union { fm1 fm2 }
+fm5 = slice fm4 including { fm4.A fm4.B fm4.C }
+
+fm2bis = FM (A : [C] [B] ; )
+fm3bis = merge union { fm1 fm2 fm2bis }
+fm4bis = aggregateMerge union { fm1 fm2 fm2bis }
+fm5bis = slice fm4bis including { fm4.A fm4.B fm4.C }

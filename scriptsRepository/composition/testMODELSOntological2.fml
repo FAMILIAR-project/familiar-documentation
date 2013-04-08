@@ -1,0 +1,12 @@
+fm1 = FM (A : B ; B : C ; )
+fm2 = FM (A : B ; B : [C] ; )
+fm3 = FM (A : [C] [B] ; )
+fm4 = merge union { fm1 fm2 fm3 }
+
+fm5 = aggregateMerge union { fm1 fm2 fm3 }
+s1 = fm1.*
+fm6 = slice fm5 including s1
+
+fm5bis = aggregateMerge --hierarchy=flat union { fm1 fm2 fm3 }
+fm6bis = slice fm5bis including s1
+

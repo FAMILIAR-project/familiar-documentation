@@ -1,0 +1,46 @@
+fm1 = FM (S : [F1] F2 [F4] ; F2 : (F5|F6) ; ) // F1, F4 optionals, F5 and F6 mutually exclusive 
+fm2 = FM (S : F1 F2 [F3] ; F2 : [F5] [F6] ; ) // F5,F6 still subfeatures of F2 but optionals, F1 mandatory 
+fm3 = FM (S : [F1] F2 [F4] ; F2 : [F5] [F6] ; F5 -> F1 ; )
+
+// you can also play with TVL, featureide, SPLOT or other formats if you want
+// serialize fm3 into featureide 
+
+// logic-based
+fm4 = merge union { fm1 fm2 fm3 }
+
+// reference-based
+fm5 = aggregateMerge union { fm1 fm2 fm3 }
+// let S be the common root of fm1, fm2, fm3
+
+// 0. without any slicing
+fm6 = extract fm5.S
+
+// 1. with slicing
+s7 = { fm5.S } ++ fm5.S.*
+fm7 = slice fm5 including s7
+
+// 2. with local slicing
+fm8 = ksynthesis fm5 over s7 with hierarchy=S : F4 F3 F1 F2 ; F2 : F5 F6 ; 
+/*
+fm8 = FM ( S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1); )*/
+
+cs5 = configs fm5
+actualConfView = setEmpty 
+foreach (cf in cs5) do
+    si = setIntersection cf s7
+    setAdd actualConfView si
+end
+
+
+// fm5i = aggregateMerge intersection { fm1 fm2 fm3 }
+/*
+cfm1 = copy fm1
+cfm2 = copy fm2
+cfm3 = copy fm3
+fm5View = FM (S : [F1] [F2] [F3] [F4] ; F2 : [F5] [F6] ; )
+csts = constraints (F1 -> fm3_F1 ; ) 
+fm5bis = aggregate --renamings { fm5View cfm1 cfm2 cfm3 } withMapping csts
+*/
+
