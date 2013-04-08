@@ -4,7 +4,7 @@ This document presents:
  * a comprehensive tutorial on feature model composition, showing the equivalence of various operators and mechanims offered by the FAMILIAR language
  * numerous examples (toy examples or based on the revisit of existing works)
 
-The associated FAMILIAR scripts are located [here][../scriptsRepository/composition/]
+The associated FAMILIAR scripts are located [here](../scriptsRepository/composition/)
 
 Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
 
