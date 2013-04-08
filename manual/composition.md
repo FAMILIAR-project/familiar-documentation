@@ -5,7 +5,7 @@ This document presents:
  * numerous examples (toy examples or based on the revisit of existing works)
 
 The associated FAMILIAR scripts are located [here](../scriptsRepository/composition/). 
-There is an appendix section at the end of the document that demonstrates FAMILIAR sessions when executing the scripts.
+There is an [appendix section](#Appendix) at the end of the document that demonstrates FAMILIAR sessions when executing the scripts.
 
 Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
 
@@ -546,7 +546,7 @@ fml> size actualConfView
 res4: (INTEGER) 18
 ```
 
-## Session 2 (second example)
+##### Session 2 (second example)
 
 ```
 macher:composition macher1$ java -jar -Xmx1024M ../../release/FML-basic-1.0.7.jar testMODELSExample2.fml 
@@ -593,7 +593,7 @@ fm5bis: (FEATURE_MODEL) S: [F8] F56 ;
 F8: (F4|F3)+ ;
 ```
 
-## Session 3 (third example)
+##### Session 3 (third example)
 
 ```
 macher:composition macher1$ java -jar -Xmx1024M ../../release/FML-basic-1.0.7.jar testMODELSOntological2.fml 
@@ -640,8 +640,7 @@ B: [C] ;
 fml> fm6bis
 fm6bis: (FEATURE_MODEL) A: [B] [C] ;
 fml> fm4
-fm4: (FEATURE_MODEL) A: [B] [C] ;
-fml> 
+fm4: (FEATURE_MODEL) A: [B] [C] ; 
 ```
  
 
