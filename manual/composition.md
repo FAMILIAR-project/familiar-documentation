@@ -4,7 +4,8 @@ This document presents:
  * a comprehensive tutorial on feature model composition, showing the equivalence of various operators and mechanims offered by the FAMILIAR language
  * numerous examples (toy examples or based on the revisit of existing works)
 
-The associated FAMILIAR scripts are located [here](../scriptsRepository/composition/)
+The associated FAMILIAR scripts are located [here](../scriptsRepository/composition/). 
+There is an appendix section at the end of the document that demonstrates FAMILIAR sessions when executing the scripts.
 
 Our ultimate goal is to provide solutions that fulfill the various needs of variability model composition.
 
@@ -460,3 +461,188 @@ Feature Model Composition. In Proc. of ECMFA’10, volume 6138 of LNCS, pages
 ![Image](compositionTutorial/fm1.png?raw=true)
 ![Image](compositionTutorial/fm2.png?raw=true)
 ![Image](compositionTutorial/fm3.png?raw=true)
+
+## Appendix 
+
+##### Session 1 (first example)
+
+```
+macher:composition macher1$ java -jar -Xmx1024M ../../release/FML-basic-1.0.7.jar testMODELSFirstExample.fml 
+FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
+http://familiar-project.github.com/
+fml> ls
+(SET) s7
+(FEATURE_MODEL) fm6
+(SET) si
+(FEATURE_MODEL) fm8
+(FEATURE_MODEL) fm1
+(FEATURE_MODEL) fm4
+(FEATURE_MODEL) fm3
+(FEATURE_MODEL) fm5
+(FEATURE_MODEL) fm7
+(FEATURE_MODEL) fm2
+(SET) cs5
+(SET) actualConfView
+fml> fm1
+fm1: (FEATURE_MODEL) S: [F4] [F1] F2 ; 
+F2: (F6|F5) ;
+fml> fm2
+fm2: (FEATURE_MODEL) S: F1 F2 [F3] ; 
+F2: [F6] [F5] ;
+fml> fm3
+fm3: (FEATURE_MODEL) S: [F4] [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F5 -> F1);
+fml> fm4
+fm4: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+fml> fm5
+fm5: (FEATURE_MODEL) MergeCST: S InputFMs ; 
+S: [F4] [F1] [F2] [F3] ; 
+InputFMs: (fm3_S|fm1_S|fm2_S) ; 
+F2: [F6] [F5] ; 
+fm3_S: [fm3_F1] [fm3_F4] [fm3_F3] fm3_F2 ; 
+fm2_S: fm2_F1 [fm2_F4] fm2_F2 [fm2_F3] ; 
+fm1_S: [fm1_F1] [fm1_F4] [fm1_F3] fm1_F2 ; 
+fm3_F2: [fm3_F5] [fm3_F6] ; 
+fm2_F2: [fm2_F5] [fm2_F6] ; 
+fm1_F2: (fm1_F5|fm1_F6) ; 
+(fm3_F5 -> fm3_F1);
+(F6 <-> ((fm3_F6 | fm2_F6) | fm1_F6));
+!fm1_F3;
+(F1 <-> ((fm3_F1 | fm2_F1) | fm1_F1));
+(F2 <-> ((fm2_F2 | fm1_F2) | fm3_F2));
+(F3 <-> ((fm3_F3 | fm2_F3) | fm1_F3));
+(F4 <-> ((fm1_F4 | fm2_F4) | fm3_F4));
+!fm2_F4;
+!fm3_F3;
+(S <-> ((fm2_S | fm1_S) | fm3_S));
+(F5 <-> ((fm1_F5 | fm3_F5) | fm2_F5));
+fml> fm6
+fm6: (FEATURE_MODEL) S: [F4] [F1] [F2] [F3] ; 
+F2: [F6] [F5] ;
+fml> fm7
+fm7: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+fml> fm8
+fm8: (FEATURE_MODEL) S: (F4|F3)? [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F3 -> F1);
+fml> compare fm4 fm7
+res1: (STRING) REFACTORING
+fml> compare fm4 fm8
+res2: (STRING) SPECIALIZATION
+fml> compare fm7 fm8
+res3: (STRING) SPECIALIZATION
+fml> cs5
+cs5: (SET) {{F6;F2;fm3_F6;fm3_S;fm3_F2;S;InputFMs;MergeCST};{MergeCST;F4;S;fm3_F2;fm3_F1;F1;F2;fm3_S;InputFMs;fm3_F4};{MergeCST;S;fm3_F2;fm3_F4;F4;fm3_S;InputFMs;F2};{F1;S;fm2_F5;fm2_F2;InputFMs;F5;fm2_S;F2;fm2_F1;MergeCST};{F4;fm3_F2;F6;fm3_S;fm3_F5;InputFMs;F5;F2;fm3_F6;S;fm3_F4;fm3_F1;F1;MergeCST};{fm1_F1;MergeCST;fm1_F6;F2;S;InputFMs;F6;fm1_S;F1;fm1_F2};{F2;F1;MergeCST;InputFMs;fm1_F5;S;fm1_F1;fm1_S;fm1_F2;F5};{MergeCST;F1;fm2_F2;F6;F3;F2;F5;InputFMs;fm2_F3;fm2_F6;fm2_F1;fm2_F5;fm2_S;S};{S;F2;fm2_F1;MergeCST;F1;fm2_S;fm2_F2;InputFMs};{InputFMs;F4;fm1_F4;fm1_S;F2;F6;S;MergeCST;fm1_F2;fm1_F6};{fm1_F5;InputFMs;S;fm1_F4;F5;F4;fm1_S;MergeCST;fm1_F2;F2};{InputFMs;fm3_F1;fm3_F2;fm3_S;S;MergeCST;F1;F2};{F2;MergeCST;F4;F6;fm3_F4;fm3_F6;fm3_S;InputFMs;fm3_F2;S};{fm3_S;fm3_F6;InputFMs;fm3_F2;fm3_F1;F6;S;F2;MergeCST;F1};{InputFMs;F6;fm1_S;fm1_F6;S;F2;MergeCST;fm1_F2};{fm2_F2;fm2_F3;F2;MergeCST;F6;InputFMs;fm2_F6;S;F1;F3;fm2_F1;fm2_S};{MergeCST;F2;F4;fm3_S;fm3_F2;S;InputFMs;F5;fm3_F4;F1;fm3_F1;fm3_F5};{F6;InputFMs;MergeCST;fm3_F5;fm3_F6;F5;fm3_S;F2;S;fm3_F1;fm3_F2;F1};{F2;F1;InputFMs;fm1_F4;F5;MergeCST;fm1_F5;F4;fm1_S;fm1_F1;S;fm1_F2};{S;F1;F3;F2;MergeCST;fm2_F3;fm2_F5;fm2_F2;fm2_F1;fm2_S;F5;InputFMs};{S;fm3_F1;fm3_F2;fm3_F5;MergeCST;F2;InputFMs;fm3_S;F1;F5};{InputFMs;F2;fm2_F3;F3;S;F1;fm2_F2;fm2_F1;fm2_S;MergeCST};{fm1_S;S;fm1_F5;InputFMs;F2;MergeCST;fm1_F2;F5};{fm3_S;S;F4;MergeCST;F6;fm3_F1;InputFMs;fm3_F2;F2;F1;fm3_F4;fm3_F6};{fm2_F1;InputFMs;fm2_F2;F2;S;fm2_S;F6;MergeCST;F5;fm2_F6;fm2_F5;F1};{F6;fm2_F6;fm2_S;fm2_F2;F2;InputFMs;MergeCST;F1;fm2_F1;S};{F2;fm1_F1;S;F1;fm1_S;InputFMs;fm1_F6;MergeCST;F6;fm1_F2;F4;fm1_F4};{fm3_S;InputFMs;MergeCST;fm3_F2;S;F2}}
+fml> si
+si: (SET) {S;F2}
+fml> actualConfView
+actualConfView: (SET) {{F4;F2;F6;S};{F1;S;F5;F2};{S;F2;F5};{F4;S;F6;F1;F2};{S;F2;F6;F1};{F6;F5;S;F2;F1};{F4;F2;S;F5;F1};{F5;F1;F6;F3;S;F2};{F2;F3;F1;S};{F2;F6;S};{F1;S;F3;F2;F5};{F4;F2;F6;S;F5;F1};{S;F2};{S;F4;F2};{S;F5;F4;F2};{F2;F6;F1;S;F3};{F4;S;F1;F2};{S;F2;F1}}
+fml> size actualConfView
+res4: (INTEGER) 18
+```
+
+## Session 2 (second example)
+
+```
+macher:composition macher1$ java -jar -Xmx1024M ../../release/FML-basic-1.0.7.jar testMODELSExample2.fml 
+FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
+http://familiar-project.github.com/
+fml> ls
+(FEATURE_MODEL) fm3
+(FEATURE_MODEL) fm4bis
+(FEATURE_MODEL) fmNewView
+(FEATURE_MODEL) fm2
+(FEATURE_MODEL) fm5bis
+(FEATURE_MODEL) fm1
+(SET) csts
+fml> fm1
+fm1: (FEATURE_MODEL) S: [F4] [F1] F2 ; 
+F2: (F6|F5) ;
+fml> fm2
+fm2: (FEATURE_MODEL) S: F1 F2 [F3] ; 
+F2: [F6] [F5] ;
+fml> fm3
+fm3: (FEATURE_MODEL) S: [F4] [F1] F2 ; 
+F2: [F6] [F5] ; 
+(F5 -> F1);
+fml> fm4bis
+fm4bis: (FEATURE_MODEL) fm4bis: fm3_S S fm2_S fm1_S ; 
+fm3_S: [fm3_F1] [fm3_F4] fm3_F2 ; 
+S: [F8] [F56] ; 
+fm2_S: fm2_F1 fm2_F2 [fm2_F3] ; 
+fm1_S: [fm1_F1] [fm1_F4] fm1_F2 ; 
+fm3_F2: [fm3_F5] [fm3_F6] ; 
+F8: [F4] [F3] ; 
+fm2_F2: [fm2_F5] [fm2_F6] ; 
+fm1_F2: (fm1_F5|fm1_F6) ; 
+(fm3_F5 -> fm3_F1);
+(F3 <-> fm2_F3);
+(F56 <-> (((((fm1_F5 | fm2_F5) | fm3_F5) | fm1_F6) | fm2_F6) | fm3_F6));
+(F4 <-> (fm1_F4 | fm3_F4));
+(F8 <-> ((fm2_F3 | fm1_F4) | fm3_F4));
+fml> fmNewView
+fmNewView: (FEATURE_MODEL) S: [F8] [F56] ; 
+F8: [F4] [F3] ;
+fml> fm5bis
+fm5bis: (FEATURE_MODEL) S: [F8] F56 ; 
+F8: (F4|F3)+ ;
+```
+
+## Session 3 (third example)
+
+```
+macher:composition macher1$ java -jar -Xmx1024M ../../release/FML-basic-1.0.7.jar testMODELSOntological2.fml 
+FAMILIAR (for FeAture Model scrIpt Language for manIpulation and Automatic Reasoning)  version 1.0.7 (beta)
+http://familiar-project.github.com/
+fml> ls
+(SET) s1
+(FEATURE_MODEL) fm6bis
+(FEATURE_MODEL) fm6
+(FEATURE_MODEL) fm3
+(FEATURE_MODEL) fm1
+(FEATURE_MODEL) fm5
+(FEATURE_MODEL) fm2
+(FEATURE_MODEL) fm4
+(FEATURE_MODEL) fm5bis
+fml> fm5
+fm5: (FEATURE_MODEL) MergeCST: A InputFMs ; 
+A: [B] ; 
+InputFMs: (fm2_A|fm3_A|fm1_A) ; 
+B: [C] ; 
+fm2_A: fm2_B ; 
+fm3_A: [fm3_C] [fm3_B] ; 
+fm1_A: fm1_B ; 
+fm2_B: [fm2_C] ; 
+fm1_B: fm1_C ; 
+(B <-> ((fm2_B | fm3_B) | fm1_B));
+(A <-> ((fm3_A | fm1_A) | fm2_A));
+(C <-> ((fm1_C | fm2_C) | fm3_C));
+fml> fm5bis 
+fm5bis: (FEATURE_MODEL) MergeCST: A InputFMs ; 
+A: [B] [C] ; 
+InputFMs: (fm2_A|fm3_A|fm1_A) ; 
+fm2_A: fm2_B ; 
+fm3_A: [fm3_C] [fm3_B] ; 
+fm1_A: fm1_B ; 
+fm2_B: [fm2_C] ; 
+fm1_B: fm1_C ; 
+(B <-> ((fm2_B | fm3_B) | fm1_B));
+(A <-> ((fm3_A | fm1_A) | fm2_A));
+(C <-> ((fm1_C | fm2_C) | fm3_C));
+fml> fm6
+fm6: (FEATURE_MODEL) A: [B] ; 
+B: [C] ;
+fml> fm6bis
+fm6bis: (FEATURE_MODEL) A: [B] [C] ;
+fml> fm4
+fm4: (FEATURE_MODEL) A: [B] [C] ;
+fml> 
+```
+ 
+
+
