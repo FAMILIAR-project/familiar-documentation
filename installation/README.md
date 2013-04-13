@@ -16,7 +16,7 @@ It is designed to provide an intuitive and easy to use user interface allowing (
 Watch the FAMILIAR Tool demo on Screencast.com: http://www.screencast.com/t/1oJBNwvw5f41
 
 The FAMILIAR Tool is available for download as a JAR file: 
-[1.0.7](../release/FML-environment-1.0.7.jar)
+[1.0.7](http://mathieuacher.com/pub/FAMILIAR/releases/FML-environment-1.0.7.jar)
 
 
 
@@ -25,7 +25,7 @@ The FAMILIAR Tool is available for download as a JAR file:
 The standalone version is simply a JAR file that supports console mode only. 
 
 Available here:
-[1.0.7](../release/FML-basic-1.0.7.jar)
+[1.0.7](http://mathieuacher.com/pub/FAMILIAR/releases/FML-basic-1.0.7.jar)
 
 ```
 java -jar -Xmx1024M ../release/FML-basic-1.0.7.jar --help
