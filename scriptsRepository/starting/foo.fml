@@ -1,6 +1,3 @@
-fm1 = FM ( Mobilephone : calls [GPS] screen [media] ;
-media : (camera|mpThree)+ ;
-screen : (basic|colour|highresolution) ;
-!GPS | !basic;
-highresolution | !camera;
- )
+fm1 = A: [D] B C ; (D -> C); 
+fm3 = R: S [T] U ; (!U -> !S); 
+fm2 = W: [X] Y Z ; (X <-> Y); 

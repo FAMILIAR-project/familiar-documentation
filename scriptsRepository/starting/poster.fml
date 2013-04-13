@@ -1,15 +1,17 @@
 fmASE = FM (Slicing : [FutureWork] Paper Support Motivation Algorithm Technique ; 
-      	Paper : (Demonstration|Long|Short)+ ; Demonstration: CaseStudy ; 
-	      CaseStudy: (VideoSurveillanceProcessingChains|MedicalImagingWorkflows|ReverseEngineeringSoftwareArchitecture) ; 
-	      		 Support: [Automation] [Language] [Environment] ; Automation: (BDD|SAT)+ ; 
-			 	  Environment: (Standalone|Eclipse)+ [Editors] ;Editors : [GraphicalEditor] [TextualEditor] ; 
-				  	       Motivation : (LargeAndComplexFMs|MultipleInterRelatedFMs)+ ; 
-					       		  Algorithm : [SupportForConstraints] [CorrectiveCapabilities] [RootSupport] [Semantics] (SyntacticalTechnique|SemanticsAware) [PropositionalLogics] ; Semantics: Hierarchy [SetOfConfigurations] ; 
-							  	    Technique: (ReasoningWithTwoKindsOfVariability|ReconcilingFMs|UpdatingAndExtractingViews)+ ; 
-								    	       Algorithm <-> Semantics ; Algorithm <-> CorrectiveCapabilities ; 
-									       		 Algorithm <-> RootSupport ; CorrectiveCapabilities -> SupportForConstraints ; 
-											 	   CorrectiveCapabilities -> SemanticsAware ; SetOfConfigurations <-> SemanticsAware ;
-												   			  SemanticsAware -> Automation ; Language -> TextualEditor ; Language ;TextualEditor -> Eclipse ;  )
+      	Paper : (Demonstration|Long|Short)+ ; 
+	Demonstration: CaseStudy ; 
+	     CaseStudy: (VideoSurveillanceProcessingChains|MedicalImagingWorkflows|ReverseEngineeringSoftwareArchitecture) ; 
+	Support: [Automation] [Language] [Environment] ; Automation: (BDD|SAT)+ ; 
+	 	  Environment: (Standalone|Eclipse)+ [Editors] ;Editors : [GraphicalEditor] [TextualEditor] ; 
+	Motivation : (LargeAndComplexFMs|MultipleInterRelatedFMs)+ ; 
+	Algorithm : [SupportForConstraints] [CorrectiveCapabilities] [RootSupport] [Semantics] (SyntacticalTechnique|SemanticsAware) [PropositionalLogics] ; 
+	Semantics: Hierarchy [SetOfConfigurations] ; 
+	Technique: (ReasoningWithTwoKindsOfVariability|ReconcilingFMs|UpdatingAndExtractingViews)+ ; 
+	    	       Algorithm <-> Semantics ; Algorithm <-> CorrectiveCapabilities ; 
+		       Algorithm <-> RootSupport ; CorrectiveCapabilities -> SupportForConstraints ; 
+		       CorrectiveCapabilities -> SemanticsAware ; SetOfConfigurations <-> SemanticsAware ;
+		       SemanticsAware -> Automation ; Language -> TextualEditor ; Language ;TextualEditor -> Eclipse ;  )
 
 // let slice
 fmSemantics = slice fmASE including { Semantics Hierarchy SetOfConfigurations }
@@ -19,12 +21,12 @@ fmAlgorithm = slice fmASE including { Algorithm SupportForConstraints RootSuppor
 
 // let slice again
 fmEnvironment = slice fmASE including { Slicing CaseStudy 
-	      	      	    VideoSurveillanceProcessingChains
-						MedicalImagingWorkflows 
-											ReverseEngineeringSoftwareArchitecture
-														Technique ReasoningWithTwoKindsOfVariability ReconcilingFMs 
-															  				     		    UpdatingAndExtractingViews } 
-																					    			       	  
+	      	      	    	      VideoSurveillanceProcessingChains
+			    		MedicalImagingWorkflows 
+					ReverseEngineeringSoftwareArchitecture
+					Technique ReasoningWithTwoKindsOfVariability ReconcilingFMs 
+					 UpdatingAndExtractingViews } 
+							    			       	  
 
 
 // let slice again
