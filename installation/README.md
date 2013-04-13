@@ -53,7 +53,7 @@ Usage: java FML
 ```
 
 
-Here is an example session (you can download the [foo.fml](../scriptsRepository/starting/poster.fml) script):
+Here is an example session (you can download the [foo.fml](../scriptsRepository/starting/foo.fml) script):
 
 ```
 scriptsRepository $ java -jar -Xmx1024M ../release/FML-basic-1.0.7.jar foo.fml 
