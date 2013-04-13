@@ -1,5 +1,7 @@
-FAMILIAR releases
+FAMILIAR releases (history)
 ======
 
-1.0.7  
+Now available at http://mathieuacher.com/pub/FAMILIAR/releases/
+
+Last version: 1.0.7  
  
