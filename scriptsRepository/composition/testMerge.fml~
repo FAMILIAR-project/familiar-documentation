@@ -1,0 +1,12 @@
+v1 = FM (A : [B] [C] ; )
+v2 = FM (A : [B] [E] ; B : C ; )
+v3 = FM (A : B [F] ; )
+
+// with explicity negated variables
+fm1 = FM (A : [B] [C] [E] [F] ; !E ; !F ; ) 
+fm2 = FM (A : [B] [E] [F] ; B : C ; !F ; )
+fm3 = FM (A : B [F] [E] [C] ; !E ; !C ; ) 
+
+fm1bis = slice fm1 including fm1.*
+cmp1 = compare fm1 fm1bis
+//assert (cmp1 eq REFACTORING)
