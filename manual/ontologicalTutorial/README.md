@@ -1,4 +1,4 @@
-# Breathing Ontological Knowledge Into Feature Model Management
+## Breathing Ontological Knowledge Into Feature Model Management
 
 This document presents: 
  * a complete environment we have developed for synthesizing feature models
@@ -17,7 +17,12 @@ In particular, we raise previous limitations and open avenues for a practical us
  * Mathieu Acher (University of Rennes 1, Inria / Irisa, Triskell team)
  * Benoit Baudry (University of Rennes 1, Inria / Irisa, Triskell team)
 
-## Features of the environment
+#### Motivation
+
+#### Illustrative Examples
+
+
+#### Features of the Environment
 
 Our tool offers an interactive mode where the user can import a formula (e.g.,
 in DIMACS format), synthesizes a complete feature model and export
