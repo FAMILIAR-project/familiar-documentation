@@ -1,4 +1,4 @@
-## Breathing Ontological Knowledge Into Feature Model Management
+### Breathing Ontological Knowledge Into Feature Model Management
 
 This document presents: 
  * a complete environment we have developed for synthesizing feature models
