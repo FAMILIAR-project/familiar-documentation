@@ -1,0 +1,147 @@
+nb pages under analysis: 381
+number of pages in the final list: 381
+fam0: 81 		 21% total set   0% analysis set
+fam1: 102 		 26% 		 34.0%
+fam2: 71 		 18% 		 23.666666%
+fam3: 32 		 8% 		 10.666667%
+fam4: 34 		 8% 		 11.333333%
+fam5: 15 		 3% 		 5.0%
+fam6: 12 		 3% 		 4.0%
+fam7: 6 		 1% 		 2.0%
+fam8: 4 		 1% 		 1.3333334%
+fam9: 6 		 1% 		 2.0%
+fam10: 5 		 1% 		 1.6666666%
+fam11: 13 		 3% 		 4.3333335%
+relevant pages: 300
+
+
+----------
+50 analysis set
+fam1: 34.0%	17.0	->17
+fam2: 23.666666%	11.833332	->12
+fam3: 10.666667%	5.333334	->5
+fam4: 11.333333%	5.666666	->6
+fam5: 5.0%	2.5	->2
+fam6: 4.0%	2.0	->2
+fam7: 2.0%	1.0	->1
+fam8: 1.3333334%	0.66666675	->1
+fam9: 2.0%	1.0	->1
+fam10: 1.6666666%	0.83333325	->1
+fam11: 4.3333335%	2.1666667	->2
+total: 49.999996
+
+
+----------
+largest PCM: (125) Comparison_of_Nvidia_graphics_processing_units
+number of tables: 55
+total headers: 1387 - max products under comparison: 64
+
+
+familly 0 *** 81 elements: 
+(0) Comparison ; (3) Comparison_between_Esperanto_and_Ido ; (4) Comparison_between_Esperanto_and_Interlingua ; (5) Comparison_between_Esperanto_and_Novial ; (6) Comparison_between_Ido_and_Interlingua ; (7) Comparison_between_Ido_and_Novial ; (8) Comparison_between_U.S._states_and_countries_by_GDP_(PPP) ; (11) Comparison_function ; (12) Comparison_microscope ; (19) Comparison_of_ALGOL_68_and_C%2B%2B ; (25) Comparison_of_Acceptance_of_Buddhism_in_India_and_China ; (27) Comparison_of_Afrikaans_and_Dutch ; (29) Comparison_of_American_and_Canadian_football ; (30) Comparison_of_American_football_and_rugby ; (31) Comparison_of_American_football_and_rugby_league ; (32) Comparison_of_American_football_and_rugby_union ; (33) Comparison_of_Ancient_Shipbuilding_Traditions ; (35) Comparison_of_Android_e-book_reader_software ; (36) Comparison_of_Asian_national_space_programs ; (37) Comparison_of_Axis_%26_Allies_games ; (40) Comparison_of_Bipolar_Disorder_and_Schizophrenia ; (44) Comparison_of_Buddhism_and_Christianity ; (48) Comparison_of_CPUs ; (52) Comparison_of_C_Sharp_and_Visual_Basic_.NET ; (56) Comparison_of_Canadian_and_American_economies ; (57) Comparison_of_Canadian_football_and_rugby_league ; (58) Comparison_of_Canadian_football_and_rugby_union ; (60) Comparison_of_Chernobyl_and_other_radioactivity_releases ; (72) Comparison_of_Exchange_ActiveSync_clients ; (75) Comparison_of_Gaelic_football_and_rugby_union ; (76) Comparison_of_General_American_and_Received_Pronunciation ; (77) Comparison_of_Greek_naval_and_land_tactics_in_the_5th_century_BC ; (84) Comparison_of_Hokkien_writing_systems ; (85) Comparison_of_Home_Owners%27_and_Civic_Associations ; (87) Comparison_of_IOC,_FIFA,_and_ISO_3166_country_codes ; (99) Comparison_of_Islamic_and_Jewish_dietary_laws ; (104) Comparison_of_Java_and_Android_API ; (105) Comparison_of_Java_and_C%2B%2B ; (109) Comparison_of_Linux_distributions ; (110) Comparison_of_MD_and_DO_in_the_United_States ; (118) Comparison_of_Nazism_and_Stalinism ; (123) Comparison_of_Norwegian_Bokm%C3%A5l_and_Standard_Danish ; (127) Comparison_of_Object_Pascal_and_C ; (135) Comparison_of_Pascal_and_C ; (136) Comparison_of_Pascal_and_Delphi ; (137) Comparison_of_Portuguese_and_Spanish ; (147) Comparison_of_Slovak_and_Czech ; (150) Comparison_of_Star_Trek_and_Star_Wars ; (152) Comparison_of_Symbian_devices ; (163) Comparison_of_United_States_presidential_candidates,_2008 ; (167) Comparison_of_Visual_Basic_and_Visual_Basic_.NET ; (172) Comparison_of_World_War_I_tanks ; (183) Comparison_of_analog_and_digital_recording ; (197) Comparison_of_browser_synchronizers ; (198) Comparison_of_business_integration_software ; (199) Comparison_of_butterflies_and_moths ; (200) Comparison_of_cash_and_accrual_methods_of_accounting ; (201) Comparison_of_chemistry_and_physics ; (205) Comparison_of_codices_Sinaiticus_and_Vaticanus ; (210) Comparison_of_consumer_brain%E2%80%93computer_interfaces ; (228) Comparison_of_different_machine_translation_approaches ; (240) Comparison_of_domestic_robots ; (243) Comparison_of_e-book_formats ; (244) Comparison_of_e-book_readers ; (260) Comparison_of_file_hosting_services ; (291) Comparison_of_layout_engines_(Cascading_Style_Sheets) ; (298) Comparison_of_layout_engines_(MathML) ; (308) Comparison_of_machine_translation_applications ; (311) Comparison_of_management_accounting_and_financial_accounting ; (314) Comparison_of_media_players ; (319) Comparison_of_mobile_operating_systems ; (325) Comparison_of_network_diagram_software ; (329) Comparison_of_numerical_analysis_software ; (342) Comparison_of_open_source_and_closed_source ; (353) Comparison_of_past_and_present_administrative_divisions_of_Japan ; (360) Comparison_of_privilege_authorization_features ; (364) Comparison_of_programming_languages_(list_comprehension) ; (365) Comparison_of_programming_languages_(mapping) ; (366) Comparison_of_programming_languages_(object-oriented_programming) ; (367) Comparison_of_programming_languages_(string_functions) ; (380) Comparison_of_relational_database_management_systems ; 
+
+familly 1 *** 102 elements: 
+(1) Comparison_(grammar) ; (2) Comparison_between_Argentine_provinces_and_countries_by_GDP_(PPP)_per_capita ; (9) Comparison_between_U.S._states_and_countries_by_GDP_(nominal) ; (10) Comparison_between_U.S._states_and_countries_by_GDP_(nominal)_per_capita ; (15) Comparison_of_401(k)_and_IRA_accounts ; (18) Comparison_of_ADO_and_ADO.NET ; (20) Comparison_of_AMD_CPU_microarchitectures ; (28) Comparison_of_American_and_British_English ; (38) Comparison_of_BPEL_engines ; (43) Comparison_of_BitTorrent_tracker_software ; (45) Comparison_of_Business_Process_Modeling_Notation_tools ; (46) Comparison_of_CAD,_CAM_and_CAE_file_viewers ; (50) Comparison_of_CRT,_LCD,_Plasma,_and_OLED ; (54) Comparison_of_California_ski_resorts ; (55) Comparison_of_Canadian-tax_preparation_software_for_personal_use ; (61) Comparison_of_Chinese_romanization_systems ; (62) Comparison_of_Colorado_ski_resorts ; (64) Comparison_of_DNS_blacklists ; (67) Comparison_of_Dewey_and_Library_of_Congress_subject_classification ; (78) Comparison_of_H.264_and_VC-1 ; (79) Comparison_of_HP_graphing_calculators ; (81) Comparison_of_HTML5_and_Flash ; (83) Comparison_of_HTML_parsers ; (88) Comparison_of_IPv6_application_support ; (89) Comparison_of_IPv6_support_by_major_transit_providers ; (90) Comparison_of_IPv6_support_in_operating_systems ; (91) Comparison_of_IPv6_support_in_routers ; (93) Comparison_of_Intel_processors ; (94) Comparison_of_Internet_Relay_Chat_bots ; (108) Comparison_of_Lemmings_ports ; (111) Comparison_of_MIDI_standards ; (114) Comparison_of_Malaysian_and_Indonesian ; (116) Comparison_of_MySQL_database_engines ; (119) Comparison_of_Net-Connected_Media_Players ; (128) Comparison_of_Office_Open_XML_and_OpenDocument ; (131) Comparison_of_OpenGL_and_Direct3D ; (132) Comparison_of_OpenXPS_and_PDF ; (133) Comparison_of_PSA_systems ; (138) Comparison_of_Power_Management_Software_Suites ; (141) Comparison_of_S.M.A.R.T._tools ; (145) Comparison_of_Scottish_Gaelic_and_Irish ; (146) Comparison_of_Skype_recorders ; (154) Comparison_of_TeX_editors ; (156) Comparison_of_Toyota_hybrids ; (157) Comparison_of_Tryton_and_Open_ERP ; (160) Comparison_of_US_and_Chinese_Military_Armed_Forces ; (165) Comparison_of_VMware_Fusion_and_Parallels_Desktop ; (166) Comparison_of_Vector_Formats_(GIS) ; (171) Comparison_of_Windows_Vista_and_Windows_XP ; (176) Comparison_of_X_window_managers ; (180) Comparison_of_agent-based_modeling_software ; (182) Comparison_of_anaerobic_and_aerobic_digestion ; (185) Comparison_of_application_servers ; (187) Comparison_of_archive_formats ; (192) Comparison_of_baseball_and_softball ; (193) Comparison_of_behavioral_experiment_software ; (194) Comparison_of_birth_control_methods ; (202) Comparison_of_chess_video_games ; (206) Comparison_of_cognitive_architectures ; (212) Comparison_of_continuous_integration_software ; (213) Comparison_of_cricket_and_baseball ; (214) Comparison_of_crowd_funding_services ; (216) Comparison_of_dance_video_games ; (221) Comparison_of_debuggers ; (222) Comparison_of_defragmentation_software ; (224) Comparison_of_dental_practice_management_software ; (227) Comparison_of_development_estimation_software ; (232) Comparison_of_disc_image_software ; (235) Comparison_of_display_technology ; (236) Comparison_of_distributed_file_systems ; (237) Comparison_of_document_interfaces ; (238) Comparison_of_document_markup_languages ; (246) Comparison_of_early_HTML_editors ; (249) Comparison_of_educational_websites_that_are_directed_to_persons_17_or_under ; (251) Comparison_of_embedded_computer_systems_on_board_the_Mars_rovers ; (254) Comparison_of_executable_file_formats ; (255) Comparison_of_facial_image_datasets ; (268) Comparison_of_free_credit_report_websites ; (269) Comparison_of_free_software_eCommerce_web_application_frameworks ; (272) Comparison_of_general_and_generalized_linear_models ; (276) Comparison_of_hardware_random_number_generators ; (277) Comparison_of_help_desk_issue_tracking_software ; (279) Comparison_of_high_definition_optical_disc_formats ; (280) Comparison_of_hub_gears ; (283) Comparison_of_iSCSI_targets ; (290) Comparison_of_karate_styles ; (309) Comparison_of_macro_recorder_software ; (320) Comparison_of_mobile_phone_standards ; (327) Comparison_of_neurofeedback_software ; (331) Comparison_of_object-relational_mapping_software ; (332) Comparison_of_object_database_management_systems ; (335) Comparison_of_online_charity_donation_services_in_the_United_Kingdom ; (336) Comparison_of_online_dating_websites ; (337) Comparison_of_online_music_lockers ; (347) Comparison_of_optimization_software ; (351) Comparison_of_packet_analyzers ; (358) Comparison_of_popular_optical_data-storage_systems ; (368) Comparison_of_programming_languages_(strings) ; (369) Comparison_of_programming_languages_(syntax) ; (370) Comparison_of_programming_paradigms ; (374) Comparison_of_radio_systems ; (377) Comparison_of_real_estate_websites ; 
+
+familly 2 *** 71 elements: 
+(13) Comparison_of_12-13.3_inch_subnotebooks ; (14) Comparison_of_3D_computer_graphics_software ; (23) Comparison_of_AMD_processors ; (26) Comparison_of_Adobe_Flex_charts ; (42) Comparison_of_BitTorrent_sites ; (47) Comparison_of_CPU_architectures ; (49) Comparison_of_CRM_systems ; (53) Comparison_of_CalDAV_and_CardDAV_implementations ; (59) Comparison_of_Canon_EOS_digital_cameras ; (63) Comparison_of_DEX_software ; (66) Comparison_of_DOS_operating_systems ; (71) Comparison_of_European_traffic_laws ; (74) Comparison_of_Fukushima_and_Chernobyl_nuclear_accidents ; (80) Comparison_of_HTML5_Remote_Desktop_projects ; (86) Comparison_of_ICBMs ; (98) Comparison_of_Internet_forum_software ; (100) Comparison_of_JavaScript-based_source_code_editors ; (101) Comparison_of_JavaScript_charting_frameworks ; (103) Comparison_of_Java_Remote_Desktop_projects ; (120) Comparison_of_Nikon_DSLR_cameras ; (121) Comparison_of_Nintendo_portable_consoles ; (122) Comparison_of_North_American_ski_resorts ; (144) Comparison_of_SSL_certificates_for_web_servers ; (148) Comparison_of_Solaris_distributions ; (151) Comparison_of_Subversion_clients ; (155) Comparison_of_Texas_Instruments_graphing_calculators ; (159) Comparison_of_UPnP_AV_media_servers ; (161) Comparison_of_Unicode_encodings ; (162) Comparison_of_United_Kingdom_and_United_States_military_ranks ; (164) Comparison_of_Usenet_newsreaders ; (169) Comparison_of_WAMPs ; (170) Comparison_of_WebSocket_implementations ; (173) Comparison_of_XML_editors ; (174) Comparison_of_XMPP_server_software ; (186) Comparison_of_application_virtual_machines ; (196) Comparison_of_brainwave_entrainment_software ; (204) Comparison_of_code_generation_tools ; (208) Comparison_of_color_models_in_computer_graphics ; (215) Comparison_of_cryptographic_hash_functions ; (217) Comparison_of_data_modeling_tools ; (223) Comparison_of_demand_generation_software ; (233) Comparison_of_disk_cloning_software ; (241) Comparison_of_dosimeters ; (247) Comparison_of_early_World_War_II_tanks ; (248) Comparison_of_early_word_processors ; (252) Comparison_of_encrypted_external_drives ; (262) Comparison_of_file_sharing_applications ; (267) Comparison_of_free_and_open-source_software_licenses ; (270) Comparison_of_free_web_hosting_services ; (274) Comparison_of_graphics_file_formats ; (275) Comparison_of_handheld_game_consoles ; (286) Comparison_of_instant_messaging_protocols ; (296) Comparison_of_layout_engines_(HTML5_canvas) ; (297) Comparison_of_layout_engines_(HTML5_media) ; (300) Comparison_of_layout_engines_(XHTML) ; (305) Comparison_of_layout_engines_(web_typography) ; (306) Comparison_of_lightweight_web_servers ; (307) Comparison_of_linear_algebra_libraries ; (312) Comparison_of_marketing_workflow_automation_software ; (323) Comparison_of_netbook-oriented_Linux_distributions ; (330) Comparison_of_object-relational_database_management_systems ; (338) Comparison_of_online_music_stores ; (343) Comparison_of_open_source_configuration_management_software ; (346) Comparison_of_optical_character_recognition_software ; (348) Comparison_of_orbital_launch_systems ; (349) Comparison_of_orbital_launchers_families ; (350) Comparison_of_orbital_rocket_engines ; (354) Comparison_of_personal_air_vehicles ; (361) Comparison_of_programming_languages ; (362) Comparison_of_programming_languages_(array) ; (371) Comparison_of_project-management_software ; 
+
+familly 3 *** 32 elements: 
+(39) Comparison_of_BSD_operating_systems ; (65) Comparison_of_DNS_server_software ; (68) Comparison_of_EDA_software ; (69) Comparison_of_English_dictionaries ; (102) Comparison_of_JavaScript_frameworks ; (107) Comparison_of_LAN_messengers ; (112) Comparison_of_MUD_clients ; (129) Comparison_of_Office_Open_XML_software ; (140) Comparison_of_Research_Networking_Tools_and_Research_Profiling_Systems ; (175) Comparison_of_X_Window_System_desktop_environments ; (179) Comparison_of_ad_servers ; (188) Comparison_of_assemblers ; (203) Comparison_of_cluster_software ; (207) Comparison_of_collegiate_quiz_bowl_formats ; (218) Comparison_of_data_serialization_formats ; (219) Comparison_of_database_access ; (225) Comparison_of_desktop_application_launchers ; (226) Comparison_of_desktop_publishing_software ; (229) Comparison_of_digital_SLRs ; (278) Comparison_of_hex_editors ; (299) Comparison_of_layout_engines_(Scalable_Vector_Graphics) ; (303) Comparison_of_layout_engines_(graphics) ; (315) Comparison_of_memory_cards ; (316) Comparison_of_metadata_editors ; (326) Comparison_of_network_monitoring_systems ; (328) Comparison_of_notetaking_software ; (334) Comparison_of_online_backup_services ; (345) Comparison_of_operating_systems ; (352) Comparison_of_parser_generators ; (355) Comparison_of_photo_gallery_software ; (372) Comparison_of_proxifiers ; (379) Comparison_of_regular_expression_engines ; 
+
+familly 4 *** 34 elements: 
+(24) Comparison_of_ATI_chipsets ; (70) Comparison_of_European_road_signs ; (113) Comparison_of_Macintosh_models ; (117) Comparison_of_NMDC_Software ; (130) Comparison_of_OpenDocument_software ; (134) Comparison_of_PVR_software_packages ; (143) Comparison_of_SSH_servers ; (158) Comparison_of_U.S._state_governments ; (168) Comparison_of_VoIP_software ; (177) Comparison_of_YouTube_downloaders ; (191) Comparison_of_audio_synthesis_environments ; (230) Comparison_of_digital_audio_editors ; (231) Comparison_of_disc_authoring_software ; (234) Comparison_of_disk_encryption_software ; (242) Comparison_of_download_managers ; (245) Comparison_of_eDonkey_software ; (259) Comparison_of_file_comparison_tools ; (265) Comparison_of_file_verification_software ; (266) Comparison_of_firewalls ; (271) Comparison_of_genealogy_software ; (282) Comparison_of_iPod_managers ; (284) Comparison_of_image_viewers ; (295) Comparison_of_layout_engines_(HTML5) ; (302) Comparison_of_layout_engines_(XML) ; (304) Comparison_of_layout_engines_(non-standard_HTML) ; (313) Comparison_of_massively_multiplayer_online_role-playing_games ; (317) Comparison_of_microblogging_services ; (321) Comparison_of_movie_cameras ; (322) Comparison_of_national_standards_of_Chinese ; (324) Comparison_of_netbooks ; (333) Comparison_of_office_suites ; (340) Comparison_of_open-source_software_hosting_facilities ; (356) Comparison_of_photo_stitching_applications ; (357) Comparison_of_platform_virtual_machines ; 
+
+familly 5 *** 15 elements: 
+(51) Comparison_of_C_Sharp_and_Java ; (73) Comparison_of_FTP_client_software ; (106) Comparison_of_Java_virtual_machines ; (126) Comparison_of_OLAP_Servers ; (139) Comparison_of_Prolog_implementations ; (178) Comparison_of_accounting_software ; (189) Comparison_of_audio_formats ; (220) Comparison_of_database_tools ; (239) Comparison_of_documentation_generators ; (256) Comparison_of_fanless_layer_2_switches ; (257) Comparison_of_feed_aggregators ; (263) Comparison_of_file_synchronization_software ; (289) Comparison_of_issue-tracking_systems ; (318) Comparison_of_mobile_Internet_Relay_Chat_clients ; (376) Comparison_of_raster_to_vector_conversion_software ; 
+
+familly 6 *** 12 elements: 
+(16) Comparison_of_802.15.4_radio_modules ; (21) Comparison_of_AMD_chipsets ; (96) Comparison_of_Internet_Relay_Chat_daemons ; (142) Comparison_of_SSH_clients ; (195) Comparison_of_boot_loaders ; (209) Comparison_of_command_shells ; (211) Comparison_of_container_formats ; (253) Comparison_of_enterprise_bookmarking_platforms ; (264) Comparison_of_file_systems ; (293) Comparison_of_layout_engines_(ECMAScript) ; (373) Comparison_of_pumps ; (378) Comparison_of_reference_management_software ; 
+
+familly 7 *** 6 elements: 
+(17) Comparison_of_ADC_software ; (258) Comparison_of_file_archivers ; (261) Comparison_of_file_managers ; (281) Comparison_of_iOS_e-book_reader_software ; (341) Comparison_of_open-source_wireless_drivers ; (359) Comparison_of_portable_media_players ; 
+
+familly 8 *** 4 elements: 
+(41) Comparison_of_BitTorrent_clients ; (82) Comparison_of_HTML_editors ; (292) Comparison_of_layout_engines_(Document_Object_Model) ; (310) Comparison_of_mail_servers ; 
+
+familly 9 *** 6 elements: 
+(95) Comparison_of_Internet_Relay_Chat_clients ; (149) Comparison_of_Sony_Vaio_laptops ; (181) Comparison_of_alcopops ; (273) Comparison_of_geographic_information_systems_software ; (285) Comparison_of_instant_messaging_clients ; (375) Comparison_of_raster_graphics_editors ; 
+
+familly 10 *** 5 elements: 
+(115) Comparison_of_Microsoft_Windows_versions ; (190) Comparison_of_audio_player_software ; (294) Comparison_of_layout_engines_(HTML) ; (339) Comparison_of_open-source_operating_systems ; (363) Comparison_of_programming_languages_(basic_instructions) ; 
+
+familly 11 *** 13 elements: 
+(22) Comparison_of_AMD_graphics_processing_units ; (34) Comparison_of_Android_devices ; (92) Comparison_of_Intel_graphics_processing_units ; (97) Comparison_of_Internet_Relay_Chat_services ; (124) Comparison_of_Nvidia_chipsets ; (125) Comparison_of_Nvidia_graphics_processing_units ; (153) Comparison_of_TLS_implementations ; (184) Comparison_of_antivirus_software ; (250) Comparison_of_email_clients ; (287) Comparison_of_instant_runoff_voting_to_other_voting_systems ; (288) Comparison_of_integrated_development_environments ; (301) Comparison_of_layout_engines_(XHTML_1.1) ; (344) Comparison_of_operating_system_kernels ; 
+
+----------
+Choosing 17 PCM(s) within familly1
+Selection of: (251) Comparison_of_embedded_computer_systems_on_board_the_Mars_rovers
+Selection of: (358) Comparison_of_popular_optical_data-storage_systems
+Selection of: (277) Comparison_of_help_desk_issue_tracking_software
+Selection of: (88) Comparison_of_IPv6_application_support
+Selection of: (160) Comparison_of_US_and_Chinese_Military_Armed_Forces
+Selection of: (216) Comparison_of_dance_video_games
+Selection of: (269) Comparison_of_free_software_eCommerce_web_application_frameworks
+Selection of: (20) Comparison_of_AMD_CPU_microarchitectures
+Selection of: (45) Comparison_of_Business_Process_Modeling_Notation_tools
+Selection of: (156) Comparison_of_Toyota_hybrids
+Selection of: (146) Comparison_of_Skype_recorders
+Selection of: (222) Comparison_of_defragmentation_software
+Selection of: (133) Comparison_of_PSA_systems
+Selection of: (176) Comparison_of_X_window_managers
+Selection of: (236) Comparison_of_distributed_file_systems
+Selection of: (206) Comparison_of_cognitive_architectures
+Selection of: (235) Comparison_of_display_technology
+----------
+Choosing 12 PCM(s) within familly2
+Selection of: (63) Comparison_of_DEX_software
+Selection of: (300) Comparison_of_layout_engines_(XHTML)
+Selection of: (186) Comparison_of_application_virtual_machines
+Selection of: (49) Comparison_of_CRM_systems
+Selection of: (270) Comparison_of_free_web_hosting_services
+Selection of: (323) Comparison_of_netbook-oriented_Linux_distributions
+Selection of: (307) Comparison_of_linear_algebra_libraries
+Selection of: (361) Comparison_of_programming_languages 
+Selection of: (349) Comparison_of_orbital_launchers_families
+Selection of: (122) Comparison_of_North_American_ski_resorts 
+Selection of: (80) Comparison_of_HTML5_Remote_Desktop_projects
+Selection of: (148) Comparison_of_Solaris_distributions
+----------
+Choosing 5 PCM(s) within familly3
+Selection of: (188) Comparison_of_assemblers
+Selection of: (379) Comparison_of_regular_expression_engines
+Selection of: (107) Comparison_of_LAN_messengers
+Selection of: (69) Comparison_of_English_dictionaries
+Selection of: (355) Comparison_of_photo_gallery_software
+----------
+Choosing 6 PCM(s) within familly4
+Selection of: (168) Comparison_of_VoIP_software
+Selection of: (317) Comparison_of_microblogging_services
+Selection of: (130) Comparison_of_OpenDocument_software
+Selection of: (191) Comparison_of_audio_synthesis_environments
+Selection of: (158) Comparison_of_U.S._state_governments
+Selection of: (245) Comparison_of_eDonkey_software
+----------
+Choosing 2 PCM(s) within familly5
+Selection of: (73) Comparison_of_FTP_client_software
+Selection of: (178) Comparison_of_accounting_software
+----------
+Choosing 2 PCM(s) within familly6
+Selection of: (373) Comparison_of_pumps
+Selection of: (209) Comparison_of_command_shells
+----------
+Choosing 1 PCM(s) within familly7
+Selection of: (258) Comparison_of_file_archivers
+----------
+Choosing 1 PCM(s) within familly8
+Selection of: (41) Comparison_of_BitTorrent_clients
+----------
+Choosing 1 PCM(s) within familly9
+Selection of: (285) Comparison_of_instant_messaging_clients
+----------
+Choosing 1 PCM(s) within familly10
+Selection of: (190) Comparison_of_audio_player_software
+----------
+Choosing 2 PCM(s) within familly11
+Selection of: (344) Comparison_of_operating_system_kernels
+Selection of: (184) Comparison_of_antivirus_software
