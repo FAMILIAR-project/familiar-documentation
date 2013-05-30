@@ -62,10 +62,10 @@ The manual describes the main concepts, operators and constructs/facilities of t
      * [cleanup] (cleanup.md)
      * [ksynthesis] (ksynthesis.md)
 
-* Contribute
-  * [interoperability](contribute/interoperability.md)
+  * Contribute
+     * [interoperability](contribute/interoperability.md)
 
-* [Grammar](grammar.md)
+  * [Grammar](grammar.md)
 
 
 
