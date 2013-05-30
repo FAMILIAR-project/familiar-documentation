@@ -24,5 +24,3 @@ two variables of type features are equal if they have the same name
 two variables of type configuration are equal if
  1. they belong to the same feature model 
  2. they have the same set of selected, deselected and unselected features
-
-TODO

@@ -36,6 +36,8 @@ The manual describes the main concepts, operators and constructs/facilities of t
      * [counting] (counting.md)
      * [configs] (configs.md)
      * [nbFeatures](nbFeatures.md)
+     * [deads](deads.md)
+     * [falseOptionals](falseOptionals.md)
 
   * Configuration
      * [configuration] (configuration.md)
