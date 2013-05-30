@@ -46,6 +46,7 @@ The manual describes the main concepts, operators and constructs/facilities of t
      * [unselectedF] (configuration.md)
      * [autoselect] (configuration.md#autoselect)
      * [isValid] (isValid.md)
+     * [isComplete] (isComplete.md)
      * [asFM] (asFM.md) 
 
   * Composition
