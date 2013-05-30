@@ -12,7 +12,7 @@ The isValid operation checks whether a configuration is valid according to its f
 The operator should not been mixed with [`isComplete`](isComplete.md) which expresses if a configuration is finished.
 
 
-Examples:
+## Examples:
 
 ```
 fml> fmA = FM(A: (B|C); B <-> C;)

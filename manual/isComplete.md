@@ -5,7 +5,7 @@ The isComplete operation checks whether a configuration is finished, meaning the
 The operator should not been mixed with [`isValid`](isValid.md) which expresses if a configuration is valid.
 
 
-Examples:
+## Examples:
 
 ```
 fml> fmA = FM(A: (B|C);)

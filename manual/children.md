@@ -2,12 +2,13 @@
 
 The children operation returns the set of child features of a feature in a feature model (hierarchy).
 
-b = children a
+## Examples
 
-a is a variable of feature type
-
-b is a set of features f1, f2, ..., fn child of a
-
-b = children fm1.A
-
-b is a set of features f1, f2, ..., fn child of A (present in the feature model fm1)
+```
+fml> fmA = FM(A: (B|C|D) [E];)
+fmA: (FEATURE_MODEL) A: (D|B|C) [E] ;
+fml> fA = root fmA
+fA: (FEATURE) A
+fml> children fA
+res7: (SET) {E;D;C;B}
+```

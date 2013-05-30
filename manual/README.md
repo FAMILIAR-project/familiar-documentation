@@ -35,6 +35,7 @@ The manual describes the main concepts, operators and constructs/facilities of t
      * [removeFeature] (removeFT.md)
      * [counting] (counting.md)
      * [configs] (configs.md)
+     * [nbFeatures](nbFeatures.md)
 
   * Configuration
      * [configuration] (configuration.md)
@@ -49,7 +50,7 @@ The manual describes the main concepts, operators and constructs/facilities of t
      * [isComplete] (isComplete.md)
      * [asFM] (asFM.md) 
 
-  * Composition
+  * [Composition](composition.md)
      * [merge] (merge.md)
      * [aggregate] (aggregate.md)
      * [insert] (insert.md)
