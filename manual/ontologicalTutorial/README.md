@@ -57,26 +57,41 @@ First, we start FAMILIAR and execute the following command that starts the envir
 The next step consists in setting the parameters of the synthesis in the synthesis menu. For this example, we choose Wikipedia Miner with the Wikipedia database as the heuristic for parent candidates, Smith-Waterman as the clustering metric and we set the threshold at 0.6. After each change, the parent candidates lists and the clusters are updated.
 
 We start synthesizing the FM by choosing a parent for the feature *Proprietary License*. We open the list of parent candidates for this feature and see that *License* is the best parent according to our heuristic which seems correct.
+
 ![Image](tutorial02_1.png)
+
 Thus, we right-click on *License* and select the option *Select this parent*. As a result, the features and their new relation appears on the FM overview.
+
 ![Image](tutorial02_2.png)
 
 We continue our synthesis by choosing a parent for the cluster {PostgreSQL, MySQL}. We know by experience that these features are two types of database and should be siblings. We right-click on the cluster and select the only option available.
+
 ![Image](tutorial03_1.png)
+
 A popup window appears asking for the parent of the selected cluster.
+
 ![Image](tutorial03_2.png)
+
 At this point, we can deselect some features that should not be part of this clusters. The list of common parent that appears below is automatically updated and we can choose the parent for this subcluster. In our case we keep all the features selected and we choose Storage as the parent. Once again, the FM is updated and as the two previous choices do not form a single tree, two trees are displayed side by side.
+
 ![Image](tutorial03_3.png)
 
 The other available operation on a cluster is to select its parent within the cluster's features. The same operation is available on cliques. We consider the clique {Storage, License, Wiki, Hosting}. This time, to choose *Wiki* as the parent of the clique, we right-click on the feature and select the only option displayed.
+
 ![Image](tutorial04_1.png)
+
 A popup window appears asking for the children of *Wiki*.
+
 ![Image](tutorial04_2.png)
+
 We confirm the choice and the FM is updated resulting in a single tree.
+
 ![Image](tutorial04_3.png)
 
 At this point of the synthesis, we start to recognize the hierarchy of the desired FM. Thus, we try to generate the rest of the hierarchy by selecting the *Complete FM* option in the synthesis menu.
+
 ![Image](tutorial05.png)
+
 The result is not yet satisfactory. The heuristics we set at the beginning of the synthesis do not perform well on the other features. For example they propose *Programming Language* as the child of *Storage* instead of *Wiki*. 
 
 In that case, we can change the heuristics and the clustering threshold to influence the automated synthesis or we can continue to provide information by choosing or ignoring a parent in the remaining features. This example illustrates that synthesizing a FM is an iterative process. Moreover the order of the choices may differ from one user to another. We could adopt a top down approach by first defining the root and its descendants or a bottom up approach by first defining the leaves of the hierarchy and finally setting the root. We can also adopt an unordered approach like in our example. This diversity of approaches forces us to present all the pieces of information at the same time instead of presenting one feature at a time.
