@@ -48,6 +48,8 @@ the scenario of an interactive and sound refactoring of a feature model is made 
 
 #### Run on the illustrative example
 
+[![ScreenShot](YoutubePreview.png)](https://www.youtube.com/watch?v=C-65cV74LAY)
+
 
 First, we start FAMILIAR and execute the following command that starts the environment:
 ``` ksynthesis --interactive Wiki ```
