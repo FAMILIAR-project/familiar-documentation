@@ -1,21 +1,24 @@
 ### Breathing Ontological Knowledge Into Feature Model Management
 
 This document presents: 
- * a complete environment we have developed for synthesizing feature models
+ * installation instructions 
+ * motivation of our work
+ * a complete environment we have developed for synthesizing feature models (see screencast below)
  * a comprehensive tutorial for using the tool
+
 
 Important management operations of FAMILIAR, like ksynthesis, slicing, merging, diff, refactoring, are now equiped with ontological capabilities since all are based on the same synthesis procedure.
 
 In particular, we raise previous limitations and open avenues for a practical usage in reverse engineering or maintenance scenarios.
  
-``This page is under construction``
-
 ##### Authors
 
  * Guillaume Bécan (University of Rennes 1, Inria / Irisa, Triskell team)
  * Sana Ben Nasr (University of Rennes 1, Inria / Irisa, Triskell team)
  * Mathieu Acher (University of Rennes 1, Inria / Irisa, Triskell team)
  * Benoit Baudry (University of Rennes 1, Inria / Irisa, Triskell team)
+
+#### Installation instructions 
 
 #### Motivation
 
@@ -97,9 +100,6 @@ At this point of the synthesis, we start to recognize the hierarchy of the desir
 The result is not yet satisfactory. The heuristics we set at the beginning of the synthesis do not perform well on the other features. For example they propose *Programming Language* as the child of *Storage* instead of *Wiki*. 
 
 In that case, we can change the heuristics and the clustering threshold to influence the automated synthesis or we can continue to provide information by choosing or ignoring a parent in the remaining features. This example illustrates that synthesizing a FM is an iterative process. Moreover the order of the choices may differ from one user to another. We could adopt a top down approach by first defining the root and its descendants or a bottom up approach by first defining the leaves of the hierarchy and finally setting the root. We can also adopt an unordered approach like in our example. This diversity of approaches forces us to present all the pieces of information at the same time instead of presenting one feature at a time.
-
-
-
 
 
 
