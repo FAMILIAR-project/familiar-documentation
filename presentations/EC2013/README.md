@@ -30,3 +30,37 @@ FAMILIAR instructions: (TODO link)
 ### CVL
 
 
+### Install your environment
+
+If you want to install your own envronment
+
+Please Download an xtext bundle from
+http://www.eclipse.org/Xtext/download.html
+
+next install obeo designer from the following update site. 
+http://www.obeo.fr/download/release/designer/6.1/latest/juno3/update/
+Please choose only obeo designer and DO NOT install obeodesigner dependencies
+
+Next download our update site from 
+http://goo.gl/IQIfa
+Unzip it and add it as a local update site. 
+
+Please select featureIDE, Familiar and CVL
+
+You have now the last eclipse with the last familiar and the last cvl derivator. 
+
+Start eclipse, go to the modelling perspective. 
+
+Next create your own modelling project
+(Viewpoint-> Modeling). 
+
+Create your cvl model and your base model. 
+You can draw it, derive it and generate the familiar script to check the correctness of the VAM model.
+
+If you want to draw it. Do a right clic on the project -> ViewPointsSelection and select the three cvl representation.
+
+Let us go. 
+
+Have fun. 
+
+
