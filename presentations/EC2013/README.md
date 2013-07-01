@@ -42,7 +42,7 @@ http://www.obeo.fr/download/release/designer/6.1/latest/juno3/update/
 Please choose only obeo designer and DO NOT install obeodesigner dependencies
 
 Next download our update site from 
-http://goo.gl/sfpbJ
+http://goo.gl/HqOQE
 Unzip it and add it as a local update site. 
 
 Please select featureIDE, Familiar and CVL
