@@ -1,0 +1,15 @@
+fm0 = FM (A: (B|C) ; )
+fm1 = FM (A: (B|C)+ ; )
+
+cmp01 = compare fm0 fm1 // fm0 is a specialization of fm1
+assert (cmp01 eq SPECIALIZATION)
+cmp10 = compare fm1 fm0 // fm1 is a generalization of fm0
+
+assert (cmp10 eq GENERALIZATION)
+
+// example taken from Automated Analysis of Feature Models 20 Years Later: A Literature Review (Benavides et al.)
+fm2 = FM (A: B [C] [D]; )
+fm3 = FM (A: B [C]; B : [D]; )
+cmp23 = compare fm2 fm3
+
+

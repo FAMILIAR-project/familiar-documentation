@@ -1,0 +1,15 @@
+		 /*
+		 * Metzger et al. 2007, RE'07
+		 * Disambiguating the .....
+		 * Figure 1, Section 3
+		 */
+
+fmSoftware = FM (R : (F1|F2) F3 [F4] ; )
+fmPL = FM (VP1 : [V1] [V2] [V3] ; V2 -> V3; )
+xLink = constraints (V1 <-> F1 ; V2 <-> F2 ; V3 <-> F3; )
+gFM = aggregate { fmPL fmSoftware } withMapping xLink
+
+fmPLPrime = slice gFM including fmPL.*
+
+fmPLDiff = merge diff { fmPL fmPLPrime }
+

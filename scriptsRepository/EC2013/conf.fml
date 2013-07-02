@@ -1,0 +1,6 @@
+fm1 = FM (A: B [C] [D] E; D : (F|G) ; E : (I|J|K|L) ; C -> !D ; )
+c1 = configuration fm1
+select C in c1
+sc1 = selectedF c1 // accessors
+cFM1 = asFM c1 // configuration and FM: back!
+

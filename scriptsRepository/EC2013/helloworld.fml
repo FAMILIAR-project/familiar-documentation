@@ -1,0 +1,5 @@
+fm1 = FM ("foo1.tvl")
+s = "hello world" 
+c = counting fm1
+n = size fm1.*
+println s

@@ -1,0 +1,11 @@
+root Fuel {
+group [1..2] {
+         Diesel,
+         Gas,
+         LPG,
+         Electricity
+     }
+     LPG -> Gas ;
+     Diesel excludes Gas ;
+     LPG excludes Electricity ;
+}

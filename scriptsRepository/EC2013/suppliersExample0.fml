@@ -1,0 +1,26 @@
+REGsupp1 = FM (Registration : Header Format Modality [Affine] ; 
+								Header : (v1|v3); 
+								Format : (DICOM|Nifti) ;  
+								Modality : CT; )
+								
+REGsupp2 = FM (Registration : Header [Affine] Format Modality ; 
+								Header : (v1|v2); 
+								Format : (Nifti|GE) ; 
+								Modality : MRI; )
+								
+REGsupp3 = FM (Registration : Header [Rigid] Format Modality ; 
+								Header : (v2|v3) ; 
+								Format : Nifti ; 
+								Modality : (MRI|PET); )
+								
+
+REGrequired = FM (Registration : Header Format Modality ; 
+								Header : v1 ; //v3; 
+								Format : (DICOM|Nifti) ; 
+								Modality: (MRI|CT);
+								!DICOM or !MRI; 
+								)
+
+REGsupp1p = merge intersection { REGrequired REGsupp1 }
+REGsupp2p = merge intersection { REGrequired REGsupp2 }
+REGsupp3p = merge intersection { REGrequired REGsupp3 }	

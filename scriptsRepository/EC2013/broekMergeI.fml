@@ -1,0 +1,3 @@
+fm1 = FM (Root: [C] (A|B)+ ; )
+fm2 = FM (Root: [A] (B|C)+; ) 
+fm3 = merge intersection { fm1 fm2 }

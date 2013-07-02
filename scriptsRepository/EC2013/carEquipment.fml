@@ -1,0 +1,39 @@
+fmCarEquipment = FM (CarEquipment : Healthing DrivingAndSafety Comfort ; 
+	       	    		    Healthing : (AirConditioning|AirConditioningFrontAndRear) ; 
+				    DrivingAndSafety : [FrontFogLights] ; 
+				    Comfort : [AutomaticHeadLights] ; 
+				    AutomaticHeadLights -> FrontFogLights ; 
+			    )
+
+// counting fm1 is NOT size configs fm1
+// (performance)
+s1 = configs fmCarEquipment 
+c1 = counting fmCarEquipment
+c2 = size s1
+
+assert (c1 eq c2)
+
+str1 = convert fmCarEquipment into TVL
+
+
+
+// customized printing of configurations set
+// ',' instead of the default ';'
+// core features do not appear
+
+coresCar = cores fmCarEquipment 
+
+foreach (s in s1) do
+	print "{"
+	i = 0
+	s = setDiff s coresCar
+	j = size s
+	foreach (ft in s) do
+		i = i + 1
+		print ft
+		if (i neq j) then
+			print ", "
+		end
+	end
+	print "}\n"
+end

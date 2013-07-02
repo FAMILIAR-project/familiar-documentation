@@ -1,0 +1,13 @@
+fm1 = FM ("foo1.tvl")
+ft1 = root fm1
+ft2 = fm1.B
+fts = fm1.*
+n = size fts
+n2 = cores fm1
+
+cf = configuration fm1
+select B in cf
+deselect C in cf
+
+cst1 = constraint (B -> !C)
+addConstraint cst1 to fm1

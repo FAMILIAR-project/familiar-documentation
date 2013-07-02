@@ -1,0 +1,16 @@
+// A3
+fm1 = FM (Audi: ModelLine BodyStyle ; 
+       	 	ModelLine : A3 ; 
+		BodyStyle : [Door3] [Sportback] [Cabriolet] ; )
+
+// A4
+fm2 = FM (Audi: ModelLine BodyStyle ; 
+      	 	ModelLine : A4 ; 
+		BodyStyle : [Saloon] [Avant] [AllroadQuattro] ; )
+
+// A1
+fm3 = FM (Audi: ModelLine BodyStyle ; 
+      	 	ModelLine : A1 ; 
+		BodyStyle : [Door3] [Sportback] ; )
+
+fmAudiS = merge sunion fm* // fm* is equivalent to fm1, fm2, fm3

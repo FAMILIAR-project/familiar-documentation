@@ -1,0 +1,2 @@
+fm1 = FM (A : [B] [C] ; B -> !C ; B and C ; )
+b1 = isValid fm1

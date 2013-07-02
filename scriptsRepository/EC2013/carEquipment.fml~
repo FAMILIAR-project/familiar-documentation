@@ -1,0 +1,13 @@
+fmCarEquipment = FM (CarEquipment : Healthing DrivingAndSafety Comfort ; 
+	       	    		    Healthing : (AirConditioning|AirConditioningFrontAndRear) ; 
+				    DrivingAndSafety : [FrontFogLights] ; 
+				    Comfort : [AutomaticHeadLights] ; 
+				    AutomaticHeadLights -> FrontFogLights ; 
+				    )
+s1 = configs fmCarEquipment 
+//c1 = counting fmCarEquipment
+c2 = size s1
+
+//assert (c1 eq c2)
+
+str1 = convert fmCarEquipment into TVL

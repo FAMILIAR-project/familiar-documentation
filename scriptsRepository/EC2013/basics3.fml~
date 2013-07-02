@@ -1,0 +1,5 @@
+fm1 = FM ("foo1.tvl")
+fm2 = FM (A : [B] [C] D ; )
+serialize fm2 into featureide
+fm3 = FM ("output/foo2.m")
+serialize fm2 into SPLOT // export
