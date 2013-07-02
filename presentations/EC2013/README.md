@@ -15,6 +15,9 @@ At the end of the tutorial, participants (being practitioners or academics, begi
 
 ### Acknowledgments
 
+Special thanks to Marianela Ciolfi Felice, Joao Bosco Ferreira Filho, Guillaume Bécan, Suresh Pilay, and Sana Ben Nasr
+
+
 ## Material
 
  * slides of the tutorial (will be uploaded shortly)
@@ -27,6 +30,9 @@ https://github.com/FAMILIAR-project/familiar-documentation/blob/master/installat
 
 Note that we provide basically three versions of FAMILIAR: 
 two standalone versions (with or without graphical environment) and an Eclipse-based plugin (see below)
+
+If you want to go further with feature model composition, go there (comprehensive tutorial) 
+https://github.com/FAMILIAR-project/familiar-documentation/blob/master/manual/composition.md
 
 
 ### CVL
