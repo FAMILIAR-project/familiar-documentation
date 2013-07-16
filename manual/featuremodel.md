@@ -14,14 +14,15 @@ The following formats are fully supported for using feature models:
 Building a new feature model uses the constructor `FM`:
 
 ```
-fm1 = FM (A : B C [D]; D : (E|F|G); C : (H|I|J)+ ; (!C | I) ; )
+fm1 = FM (A : B C [D]; B: (E|F) ; C : (G|H|I)? ; D : (J|K)+ ; (!C | D) ; )
 ```
 
  * A is the **root** 
  * B, C and D are child-features of A: B and C are **mandatory** whereas D is **optional** 
- * E, F and G form a **XOR-group** and are child-features of D 
- * H, I, and J form an **OR-group** and are child-features of C 
- * (!C | I) is equivalent to (C -> I) and is an **internal constraint** of the feature model
+ * E and F form a **XOR-group** and are child-features of B 
+ * G, H and I form an **optional XOR-group** and are child-features of C 
+ * J and K form an **OR-group** and are child-features of D
+ * (!C | D) is equivalent to (C -> D) and is an **internal constraint** of the feature model
 
 Here is a diagrammatic representation of fm1 with FeatureIDE editor: 
 
