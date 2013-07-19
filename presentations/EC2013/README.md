@@ -20,7 +20,7 @@ Special thanks to Marianela Ciolfi Felice, Joao Bosco Ferreira Filho, Guillaume 
 
 ## Material
 
- * slides of the tutorial (will be uploaded shortly)
+ * slides of the tutorial: http://fr.slideshare.net/acher/ec2013-tutorialmb-variabilityfinal
  * FAMILIAR scripts: https://github.com/FAMILIAR-project/familiar-documentation/tree/master/scriptsRepository/EC2013
  * CVL stuff (see below)
  
