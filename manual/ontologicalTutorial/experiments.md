@@ -1,4 +1,4 @@
-# Empirical Evaluation of Ontological-aware Feature Model Synthesis 
+# Empirical Evaluation of Ontologic-aware Feature Model Synthesis 
 
 Data, code, and instructions for reproducing the results will be available very soon
 
