@@ -1,0 +1,12 @@
+fm1 = FM (W : P T [U] ; T : [V] A ;
+                           A : B C [D] ; 
+			    C : [E] [F] ; 
+			    P : (R|S)+ ; 
+			    E implies D ; R implies E ; 
+			    S implies (F and !E) ; D implies !F ; ) 
+										    	         
+fm2 = slice fm1 including { S T E D }
+fm2bis = slice fm1 excluding { W P R V A B C F U }
+
+cmp = compare fm2 fm2bis
+assert (cmp eq REFACTORING)

@@ -1,0 +1,5 @@
+fm1 = FM (A : B ; B : C ;)
+fm2 = FM (A : B ; B : [C] ;)
+fm3 = FM (A : [C] ; C : [B] ; )
+fm4 = merge sunion { fm1 fm2 fm3 }
+

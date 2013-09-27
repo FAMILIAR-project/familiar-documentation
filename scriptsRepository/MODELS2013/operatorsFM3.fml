@@ -1,0 +1,10 @@
+fm1 = FM (A : [B] [C] ; B -> !C ; B and C ; )
+b1 = isValid fm1
+
+csts1 = constraints fm1
+foreach (cst in csts1) do 
+	println "removing constraint... ", cst
+	removeConstraint cst in fm1
+	c = counting fm1
+	println "now the number of valid configurations is... ", c
+end

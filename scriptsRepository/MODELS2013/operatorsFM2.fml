@@ -1,0 +1,7 @@
+fm1 = FM (W : P (T|U); P : (R|S)+ ; T : [V] [A] ; R -> !V ; S -> U ; R -> A ; )
+b1 = isValid fm1
+s1 = configs fm1
+c1 = counting fm1
+dfm1 = deads fm1 
+println "cores: ", cores fm1
+fo1 = falseOptionals fm1

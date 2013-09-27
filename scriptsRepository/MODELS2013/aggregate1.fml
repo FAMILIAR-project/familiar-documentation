@@ -1,0 +1,10 @@
+fm1 = FM (A : B [C] [D] ; D : (E|F) ; C -> !E; )
+fm2 = FM (I : J [K] L ; )     	    
+fm3 = FM (M : (N|O|P)+ ; )
+cst = constraints (J implies C ; )
+
+// equivalent to aggregate { fm1 fm2 fm3 }
+fm4 = aggregate fm* withMapping cst 
+
+// composition sometimes leads to "anomalies"
+dfm4 = deads fm4

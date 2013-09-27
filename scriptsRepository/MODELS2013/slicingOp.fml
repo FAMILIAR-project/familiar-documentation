@@ -1,0 +1,17 @@
+fm1 = FM (W : P T [U] ; T : [V] A ;
+                           A : B C [D] ; 
+			    C : [E] [F] ; 
+			    P : (R|S)+ ; 
+			    E implies D ; R implies E ; 
+
+			    S implies (F and !E) ; D implies !F ; ) 
+										    	         
+fm2 = slice fm1 including fm1.A.* ++ { fm1.A }
+
+fm3 = slice fm1 including fm1.P.* ++ { fm1.P }
+//fm3bis = slice fm1 including { fm1.P fm1.R fm1.S } // equivalent to fm3
+
+fm4 = slice fm1 including { fm1.E fm1.D fm1.F }
+
+fts5 = { fm1.P fm1.W } ++ fm1.P.* 
+fm5 = slice fm1 including fts5

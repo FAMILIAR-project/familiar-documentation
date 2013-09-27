@@ -1,0 +1,14 @@
+fm1 = FM (A : B [C] ; B : E F ; C : (I|J) ; )
+
+r1 = root fm1
+s = children r1
+s1 = children fm1.A
+assert (s eq s1) // equality of the two sets
+ft1 = parent fm1.F
+str1 = name ft1
+ft2 = parent F // parent fm1.F
+
+// another FM
+fm2 = FM (A : B C E ; C : (I|J)+ ; )
+ft3 = fm2.B
+ft4 = name B // ambiguity 

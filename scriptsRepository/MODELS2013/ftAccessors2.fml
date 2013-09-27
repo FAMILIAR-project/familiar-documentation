@@ -1,0 +1,11 @@
+fm1 = FM (A: B [C] D; D : (E|F)+; F : (I|J|K); E : [Z]; )
+fm1bis = copy fm1 // save the original version
+
+renameFeature fm1.B as "Bbis"
+s1 = fm1.* // set of features of fm1
+foreach (ft1 in s1) do
+	println ft1
+end
+
+
+

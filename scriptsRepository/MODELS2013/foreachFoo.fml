@@ -1,0 +1,15 @@
+Android_Truc = FM (Truc : Thing2_Truc ; )
+Iphone_Client = FM (Client : Bonne_Batterie_Client Cher_Client [Bon_Signal_Client] ; Client -> !Bon_Signal_Client; )
+Iphone_Truc = FM (Truc : [Thing2_Truc] ; Truc -> !Thing2_Truc; )
+Android_Client = FM (Client : [Bonne_Batterie_Client] [Cher_Client] Bon_Signal_Client ; Client -> !Cher_Client; )
+Android_Developpeur = FM (Developpeur : API_Consequente_Developpeur Code_Ouvert_Developpeur [Appli_Rentable_Developpeur] ; API_Consequente_Developpeur : Open_Source ;Developpeur -> !Appli_Rentable_Developpeur; )
+Iphone_Developpeur = FM (Developpeur : [API_Consequente_Developpeur] [Code_Ouvert_Developpeur] Appli_Rentable_Developpeur ; Developpeur -> API_Consequente_Developpeur; Developpeur -> !Code_Ouvert_Developpeur; )
+fm_Iphone = FM(OSMobile : ID Marque ; ID : Iphone ; Marque : Apple ; )
+foreach(f in Iphone_*) do
+insert f into fm_Iphone.OSMobile with mand
+end
+fm_Android = FM(OSMobile : ID Marque ; ID : Android ; Marque : Google ; )
+foreach(f in Android_*) do
+insert f into fm_Android.OSMobile with mand
+end
+finalFM = merge sunion fm_*

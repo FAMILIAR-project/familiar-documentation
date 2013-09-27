@@ -1,0 +1,17 @@
+fmsupp1 = FM (MedicalImage : [Anonymized] MRI [DICOM] ; MRI : (T1|T2) ;  )
+fmsupp2 = FM (MedicalImage : Anonymized MRI [Header] ; MRI : [T1] [T2] ; )
+fmsupp3 = FM (MedicalImage : [Anonymized] MRI [DICOM] ; MRI : [T1] [T2] ; T1 -> Anonymized; )
+
+s1 = configs fmsupp1
+s2 = configs fmsupp2
+s3 = configs fmsupp3
+
+s123 = setUnion s3 setUnion s1 s2
+
+fmSupp = merge sunion fmsupp*
+
+assert (size s123 eq counting fmSupp)
+
+fmCommon = merge intersection { fmsupp1 fmsupp2 }
+sC = configs fmCommon
+sC2 = setIntersection s1 s2

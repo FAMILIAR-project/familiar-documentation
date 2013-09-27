@@ -1,0 +1,8 @@
+fmsupp1 = FM (MedicalImage : [Anonymized] MRI [DICOM] ; MRI : (T1|T2) ;  )
+fmsupp2 = FM (MedicalImage : Anonymized MRI [Header] ; MRI : [T1] [T2] ; )
+fmsupp3 = FM (MedicalImage : [Anonymized] MRI [DICOM] ; MRI : [T1] [T2] ; T1 -> Anonymized; )
+
+fmSupp = merge sunion fmsupp*
+fmSuppAgg = aggregateMerge sunion fmsupp*
+
+fmSuppAggSlice = slice fmSuppAgg including fmSupp.*
