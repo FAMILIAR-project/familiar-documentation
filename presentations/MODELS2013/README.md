@@ -14,7 +14,7 @@ The tutorial has been presented at MODELS'13 conference: http://models2013.lcc.u
 
 ## Material
 
- * slides of the tutorial: http://fr.slideshare.net/acher/ec2013-tutorialmb-variabilityfinal
+ * slides of the tutorial: soon available...
  * FAMILIAR scripts: https://github.com/FAMILIAR-project/familiar-documentation/tree/master/scriptsRepository/MODELS2013
  
 and packaged tools to interactively play with the models during the tutorial.
