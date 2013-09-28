@@ -1,4 +1,4 @@
-# Model-based Variability Management
+# Feature Model Management: Smart Operations and Language Support
 
 The tutorial has been presented at MODELS'13 conference: http://models2013.lcc.uma.es/tutorials.html#TT7
 
