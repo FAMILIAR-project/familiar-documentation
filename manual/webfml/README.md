@@ -6,8 +6,8 @@ A key feature of WebFML is an interactive support (through ranking lists, cluste
 This document presents 
 
  * WebFML features
- * installation instructions 
  * a comprehensive tutorial for using the tool
+ * installation instructions 
 
 <!--- Important management operations of FAMILIAR, like ksynthesis, slicing, merging, diff, refactoring, are now equiped with ontological capabilities since all are based on the same synthesis procedure.
 
@@ -38,15 +38,6 @@ choices and selected heuristics.
 
 A typical usage is to perform some choices, generate the current result (through a graphical representation of the feature model) and reiterate until having a satisfactory model. In particular, the scenario of an interactive and sound refactoring of a feature model is made possible.
 
-#### Installation instructions 
-* Install [Play! framework](http://www.playframework.com/)
-* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML-->
-* Go to the extracted folder and start the server with *play run* command.
-* Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
-<!--- 
-* To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
-* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
---->
 
 #### Run on the illustrative example
 
@@ -100,7 +91,15 @@ The result is not yet satisfactory. The heuristics we set at the beginning of th
 
 In that case, we can change the heuristics and the clustering threshold to influence the automated synthesis or we can continue to provide information by choosing or ignoring a parent in the remaining features. This example illustrates that synthesizing a FM is an iterative process. Moreover the order of the choices may differ from one user to another. We could adopt a top down approach by first defining the root and its descendants or a bottom up approach by first defining the leaves of the hierarchy and finally setting the root. We can also adopt an unordered approach like in our example. This diversity of approaches forces us to present all the pieces of information at the same time instead of presenting one feature at a time.
 
-
+#### Installation instructions 
+* Install [Play! framework](http://www.playframework.com/)
+* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML-->
+* Go to the extracted folder and start the server with *play run* command.
+* Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
+<!--- 
+* To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
+* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
+--->
 
 
 
