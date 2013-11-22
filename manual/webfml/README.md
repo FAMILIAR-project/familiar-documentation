@@ -5,8 +5,8 @@ A key feature of WebFML is an interactive support (through ranking lists, cluste
 
 This document presents 
 
- * installation instructions 
  * WebFML features
+ * installation instructions 
  * a comprehensive tutorial for using the tool
 
 <!--- Important management operations of FAMILIAR, like ksynthesis, slicing, merging, diff, refactoring, are now equiped with ontological capabilities since all are based on the same synthesis procedure.
@@ -21,19 +21,7 @@ In particular, we raise previous limitations and open avenues for a practical us
  * Mathieu Acher (University of Rennes 1, Inria / Irisa, Triskell team)
  * Benoit Baudry (University of Rennes 1, Inria / Irisa, Triskell team)
 
-#### Installation instructions 
-* Install [Play! framework](http://www.playframework.com/)
-* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML--->
-* Go to the extracted folder and start the server with *play run* command.
-* Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
-<!--- * To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
-* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
 
-#### Motivation 
-
-#### Illustrative Examples
-
---->
 #### Features of the Environment
 
 WebFML offers an interactive mode where the user can import a formula (e.g., in DIMACS format), synthesizes a complete feature model and export the result in different formats. During the synthesis, the GUI displays a ranking list of parent candidates for every feature, a list of clusters and a graphical preview of the feature model in construction. During the interactive process, users can:
@@ -49,6 +37,16 @@ synthesis ;
 choices and selected heuristics.
 
 A typical usage is to perform some choices, generate the current result (through a graphical representation of the feature model) and reiterate until having a satisfactory model. In particular, the scenario of an interactive and sound refactoring of a feature model is made possible.
+
+#### Installation instructions 
+* Install [Play! framework](http://www.playframework.com/)
+* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML-->
+* Go to the extracted folder and start the server with *play run* command.
+* Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
+<!--- 
+* To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
+* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
+--->
 
 #### Run on the illustrative example
 
