@@ -1,17 +1,18 @@
 ### WebFML: Synthezing Feature Models Everywhere
 
-<!--- 
-This document presents: 
+WebFML is a comprehensive environment for synthesizing FMs from various kinds of artefacts (product comparison matrices, configuration files, dependency graph, compilation directives, propositional formula, or simply FMs). 
+A key feature of WebFML is an interactive support (through ranking lists, clusters, and logical heuristics) for choosing a sound and meaningful hierarchy.
+
+This document presents 
+
  * installation instructions 
- * motivation of our work
- * a complete environment we have developed for synthesizing feature models (see screencast below)
+ * WebFML features
  * a comprehensive tutorial for using the tool
 
+<!--- Important management operations of FAMILIAR, like ksynthesis, slicing, merging, diff, refactoring, are now equiped with ontological capabilities since all are based on the same synthesis procedure.
 
-Important management operations of FAMILIAR, like ksynthesis, slicing, merging, diff, refactoring, are now equiped with ontological capabilities since all are based on the same synthesis procedure.
+In particular, we raise previous limitations and open avenues for a practical usage in reverse engineering or maintenance scenarios. --->
 
-In particular, we raise previous limitations and open avenues for a practical usage in reverse engineering or maintenance scenarios.
-  --> 
 
 ##### Authors
 
@@ -21,24 +22,21 @@ In particular, we raise previous limitations and open avenues for a practical us
  * Benoit Baudry (University of Rennes 1, Inria / Irisa, Triskell team)
 
 #### Installation instructions 
-* Download and extract the [FAMILIAR environment](https://transfert.inria.fr/fichiers/c9a9b4389797a0a8ce686aa25846a866/FAMILIAR_environment.zip)
-* Start the environment with the following command: java -jar FAMILIAR_environment.jar
-* To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
-* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their tool.
+* Install [Play! framework](http://www.playframework.com/)
+* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML--->
+* Go to the extracted folder and start the server with *play run* command.
+* Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
+<!--- * To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
+* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
 
-#### Motivation
+#### Motivation 
 
 #### Illustrative Examples
 
-
+--->
 #### Features of the Environment
 
-Our tool offers an interactive mode where the user can import a formula (e.g.,
-in DIMACS format), synthesizes a complete feature model and export
-the result in different formats. During the synthesis, the
-GUI displays a ranking list of parent candidates for every
-feature, a list of clusters and a graphical preview of the feature model
-in construction. During the interactive process, users can:
+WebFML offers an interactive mode where the user can import a formula (e.g., in DIMACS format), synthesizes a complete feature model and export the result in different formats. During the synthesis, the GUI displays a ranking list of parent candidates for every feature, a list of clusters and a graphical preview of the feature model in construction. During the interactive process, users can:
  * select or ignore a parent candidate in the ranking lists ;
  * select a parent for a cluster within the cluster’s features
 or any potential parent feature outside the cluster (the
@@ -50,10 +48,7 @@ synthesis ;
  * automatically generate a complete FM according to previous
 choices and selected heuristics.
 
-A typical usage is to perform some choices, generate the
-current result (through a graphical representation of the feature model)
-and reiterate until having a satisfactory model. In particular,
-the scenario of an interactive and sound refactoring of a feature model is made possible.
+A typical usage is to perform some choices, generate the current result (through a graphical representation of the feature model) and reiterate until having a satisfactory model. In particular, the scenario of an interactive and sound refactoring of a feature model is made possible.
 
 #### Run on the illustrative example
 
