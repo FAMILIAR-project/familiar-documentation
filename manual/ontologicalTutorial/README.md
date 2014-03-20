@@ -19,7 +19,7 @@ In particular, we raise previous limitations and open avenues for a practical us
  * Benoit Baudry (University of Rennes 1, Inria / Irisa, Triskell team)
 
 #### Installation instructions 
-* Download and extract the [FAMILIAR environment](https://transfert.inria.fr/fichiers/c9a9b4389797a0a8ce686aa25846a866/FAMILIAR_environment.zip)
+* Download and extract the [FAMILIAR environment](http://people.rennes.inria.fr/Guillaume.Becan/downloads/FAMILIAR_environment.zip)
 * Start the environment with the following command: java -jar FAMILIAR_environment.jar
 * To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
 * To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their tool.
