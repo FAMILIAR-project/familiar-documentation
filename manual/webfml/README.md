@@ -25,18 +25,15 @@ In particular, we raise previous limitations and open avenues for a practical us
 #### Features of the Environment
 
 WebFML offers an interactive mode where the user can import a formula (e.g., in DIMACS format), synthesizes a complete feature model and export the result in different formats. During the synthesis, the GUI displays a ranking list of parent candidates for every feature, a list of clusters and a graphical preview of the feature model in construction. During the interactive process, users can:
- * select or ignore a parent candidate in the ranking lists ;
- * select a parent for a cluster within the cluster’s features
-or any potential parent feature outside the cluster (the
-user can also consider only a subset of a cluster when
-selecting the parent) ;
- * undo a previous choice ;
- * define the different heuristics and parameters of the
-synthesis ;
- * automatically generate a complete FM according to previous
-choices and selected heuristics.
+* select or ignore a parent candidate in the ranking lists _(see F)_
+* select a parent for a cluster (or a clique) within the cluster's features or any potential parent feature outside the cluster _(see G and H)_. The user can also consider a subset of a cluster when selecting the parent;
+* undo a previous choice _(see C)_ 
+* define the different heuristics and parameters of the synthesis _(see B)_ 
+* automatically generate a complete FM according to previous choices and selected heuristics _(see C)_
+* use FAMILIAR capabilities within an integrated console _(see I)_
+* manage FAMILIAR script files and previously computed variables _(see A and D)_
 
-A typical usage is to perform some choices, generate the current result (through a graphical representation of the feature model) and reiterate until having a satisfactory model. In particular, the scenario of an interactive and sound refactoring of a feature model is made possible.
+A typical usage is to perform some choices, generate a complete FM with the heuristics and the optimum branching algorithm and reiterate until having a satisfactory model.
 
 
 #### Run on the illustrative example
