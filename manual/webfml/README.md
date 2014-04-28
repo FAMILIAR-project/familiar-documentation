@@ -35,54 +35,57 @@ WebFML offers an interactive mode where the user can import a formula (e.g., in 
 
 A typical usage is to perform some choices, generate a complete FM with the heuristics and the optimum branching algorithm and reiterate until having a satisfactory model.
 
+![Image](screenshots/webFML.png)
+
 
 #### Run on the illustrative example
 
-[![ScreenShot](YoutubePreview.png)](https://www.youtube.com/watch?v=C-65cV74LAY)
+[Screencast](https://www.youtube.com/watch?v=JC6IinDqupg)
 
+
+![Image](screenshots/image1.png)
+![Image](screenshots/image2.png)
+![Image](screenshots/image3.png)
+![Image](screenshots/image4.png)
+![Image](screenshots/image4'.png)
+![Image](screenshots/image5.png)
+![Image](screenshots/image6.png)
+![Image](screenshots/image7.png)
+
+
+#### Old tutorial
 
 First, we start FAMILIAR and execute the following command that starts the environment:
 ``` ksynthesis --interactive Wiki ```
-
-![Image](tutorial01.png)
 
 The next step consists in setting the parameters of the synthesis in the synthesis menu. For this example, we choose Wikipedia Miner with the Wikipedia database as the heuristic for parent candidates, Smith-Waterman as the clustering metric and we set the threshold at 0.6. After each change, the parent candidates lists and the clusters are updated.
 
 We start synthesizing the FM by choosing a parent for the feature *Proprietary License*. We open the list of parent candidates for this feature and see that *License* is the best parent according to our heuristic which seems correct.
 
-![Image](tutorial02_1.png)
 
 Thus, we right-click on *License* and select the option *Select this parent*. As a result, the features and their new relation appears on the FM overview.
 
-![Image](tutorial02_2.png)
 
 We continue our synthesis by choosing a parent for the cluster {PostgreSQL, MySQL}. We know by experience that these features are two types of database and should be siblings. We right-click on the cluster and select the only option available.
 
-![Image](tutorial03_1.png)
 
 A popup window appears asking for the parent of the selected cluster.
 
-![Image](tutorial03_2.png)
 
 At this point, we can deselect some features that should not be part of this clusters. The list of common parent that appears below is automatically updated and we can choose the parent for this subcluster. In our case we keep all the features selected and we choose Storage as the parent. Once again, the FM is updated and as the two previous choices do not form a single tree, two trees are displayed side by side.
 
-![Image](tutorial03_3.png)
 
 The other available operation on a cluster is to select its parent within the cluster's features. The same operation is available on cliques. We consider the clique {Storage, License, Wiki, Hosting}. This time, to choose *Wiki* as the parent of the clique, we right-click on the feature and select the only option displayed.
 
-![Image](tutorial04_1.png)
 
 A popup window appears asking for the children of *Wiki*.
 
-![Image](tutorial04_2.png)
 
 We confirm the choice and the FM is updated resulting in a single tree.
 
-![Image](tutorial04_3.png)
 
 At this point of the synthesis, we start to recognize the hierarchy of the desired FM. Thus, we try to generate the rest of the hierarchy by selecting the *Complete FM* option in the synthesis menu.
 
-![Image](tutorial05.png)
 
 The result is not yet satisfactory. The heuristics we set at the beginning of the synthesis do not perform well on the other features. For example they propose *Programming Language* as the child of *Storage* instead of *Wiki*. 
 
@@ -90,13 +93,12 @@ In that case, we can change the heuristics and the clustering threshold to influ
 
 #### Installation instructions 
 * Install [Play! framework](http://www.playframework.com/)
-* Download and extract [WebFML](TODO) <!--- TODO : add link to archive of WebFML-->
+* Download and extract [WebFML](TODO) __TODO : add link to archive of WebFML__
 * Go to the extracted folder and start the server with *play run* command.
 * Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
-<!--- 
 * To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
-* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their 
---->
+* To use the heuristics based on [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/), you need to create a Wikipedia database with their tool and link it to WebFML.
+
 
 
 
