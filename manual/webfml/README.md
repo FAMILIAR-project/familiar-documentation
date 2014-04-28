@@ -43,7 +43,7 @@ A typical usage is to perform some choices, generate a complete FM with the heur
 A video of WebFML in action is available [here](https://www.youtube.com/watch?v=JC6IinDqupg).
 
 
-The first step to synthesize a Feature Model (FM) with WebFML is to load a formula or another artefact containing the configuration semantics of the FM. One way of loading a formula is to use the integrated FAMILIAR console and enter the following command: ``` myVar = FM("path/to/my/artefact)" ```
+The first step to synthesize a Feature Model (FM) with WebFML is to load a formula or another artefact containing the configuration semantics of the FM. One way of loading a formula is to use the integrated FAMILIAR console and enter the following command: ``` myVar = FM("path/to/my/artefact") ```
 
 ![Image](screenshots/1-loading_formula.png)
 
