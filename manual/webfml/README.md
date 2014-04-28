@@ -1,6 +1,6 @@
 ### WebFML: Synthezing Feature Models Everywhere
 
-WebFML is a comprehensive environment for synthesizing FMs from various kinds of artefacts (product comparison matrices, configuration files, dependency graph, compilation directives, propositional formula, or simply FMs). 
+WebFML is a comprehensive environment for synthesizing FMs from various kinds of artefacts (product comparison matrices, configuration files, dependency graph, compilation directives, propositional formula, or simply feature models). 
 A key feature of WebFML is an interactive support (through ranking lists, clusters, and logical heuristics) for choosing a sound and meaningful hierarchy.
 
 This document presents 
@@ -40,56 +40,100 @@ A typical usage is to perform some choices, generate a complete FM with the heur
 
 #### Run on the illustrative example
 
-[Screencast](https://www.youtube.com/watch?v=JC6IinDqupg)
+A video of WebFML in action is available [here](https://www.youtube.com/watch?v=JC6IinDqupg).
 
 
-![Image](screenshots/image1.png)
-![Image](screenshots/image2.png)
-![Image](screenshots/image3.png)
-![Image](screenshots/image4.png)
-![Image](screenshots/image4'.png)
-![Image](screenshots/image5.png)
-![Image](screenshots/image6.png)
-![Image](screenshots/image7.png)
+The first step to synthesize a Feature Model (FM) with WebFML is to load a formula or another artefact containing the configuration semantics of the FM. One way of loading a formula is to use the integrated FAMILIAR console and enter the following command: ``` myVar = FM("path/to/my/artefact" ```
+
+![Image](screenshots/1-loading-formula.png)
+
+A new variable will be created on the right panel of WebFML. We can start the synthesis of the FM by clicking on the variable and then the __Synthesize__ button.
+
+![Image](screenshots/2-synthesis-button.png)
+
+The next step consists in setting the parameters of the synthesis in the synthesis menu. For this example, we choose Levenshtein as the heuristic for parent candidates, Smith-Waterman as the clustering metric and we set the threshold at 0.6. After each change, the parent candidates lists and the clusters are updated.
+
+![Image](screenshots/3-heuristics-configuration.png)
+
+Our first action on the FM is to choose _Wiki_ as it root. For that, we go to the ranking list of the feature _Wiki_ and click on __Set as root__ button.
+We note that WebFML allows to start the synthesis with any parent-child relation of the FM and do not require to set the root first.
+
+![Image](screenshots/4-root.png)
+
+The preview of the FM is updated accordingly to our modifications.
+
+![Image](screenshots/5-preview.png)
+
+Then, we continue our synthesis by choosing a parent for the feature _Proprietary License_. We open the list of parent candidates for this feature and see that _License_ is the best parent according to our heuristic which seems correct.
+
+![Image](screenshots/6-ranking-lists.png)
+
+Thus, we click on _License_ and select the option __Select this parent__. 
+
+![Image](screenshots/7-select-parent.png)
+
+As a result, the features and their new relation appears on the FM overview.
+
+![Image](screenshots/8-preview.png)
+
+We continue our synthesis by clicking on the cluster _{PostgreSQL, MySQL}_. We know by experience that these features are two types of database and should be siblings. 
+
+![Image](screenshots/9-clusters.png)
+
+At this point, we can deselect some features that should not be part of this clusters. The list of common parent that appears above is automatically updated and we can choose the parent for this subcluster. In our case we keep all the features selected and we choose Storage as the parent. Once again, the FM is updated and as the two previous choices do not form a single tree, two trees are displayed side by side.
+
+![Image](screenshots/10-preview.png)
+
+The other available operation on a cluster is to select its parent within the cluster's features. The same operation is available on cliques. We consider the clique _{Storage, License, Wiki, Hosting}_ and choose _Wiki_ as the parent of all the features of the clique.
+
+![Image](screenshots/11-cliques.png)
+
+We confirm our choice and the FM is updated, resulting in a single tree.
+
+![Image](screenshots/12-preview.png)
+
+At this point of the synthesis, we start to recognize the hierarchy of the desired FM. Thus, we can try to generate the rest of the hierarchy by using the __Complete FM__ button in the top right corner of the synthesis tab of WebFML
+
+![Image](screenshots/13-complete-FM.png)
+
+![Image](screenshots/14-preview.png)
+
+The result is not yet satisfactory. The heuristics we set at the beginning of the synthesis do not perform well on the other features. For example they propose _Programming Language_ as the child of _Storage_ instead of _Wiki_. 
+
+In that case, we can change the heuristics and the clustering threshold to influence the automated synthesis or we can continue to provide information refactoring the generated FM. Here, we go to the ranking list of _Programming Language_. 
+
+![Image](screenshots/15-refactoring.png)
+
+The current choice is highlighted in blue but WebFML allows to select the feature _Wiki_ as a new parent for _Programming Language_
+
+![Image](screenshots/16-preview.png)
+
+This example illustrates that synthesizing a FM is an iterative process. Moreover the order of the choices may differ from one user to another. We could adopt a top down approach by first defining the root and its descendants or a bottom up approach by first defining the leaves of the hierarchy and finally setting the root. We can also adopt an unordered approach like in our example.
 
 
-#### Old tutorial
-
-First, we start FAMILIAR and execute the following command that starts the environment:
-``` ksynthesis --interactive Wiki ```
-
-The next step consists in setting the parameters of the synthesis in the synthesis menu. For this example, we choose Wikipedia Miner with the Wikipedia database as the heuristic for parent candidates, Smith-Waterman as the clustering metric and we set the threshold at 0.6. After each change, the parent candidates lists and the clusters are updated.
-
-We start synthesizing the FM by choosing a parent for the feature *Proprietary License*. We open the list of parent candidates for this feature and see that *License* is the best parent according to our heuristic which seems correct.
 
 
-Thus, we right-click on *License* and select the option *Select this parent*. As a result, the features and their new relation appears on the FM overview.
 
 
-We continue our synthesis by choosing a parent for the cluster {PostgreSQL, MySQL}. We know by experience that these features are two types of database and should be siblings. We right-click on the cluster and select the only option available.
 
 
-A popup window appears asking for the parent of the selected cluster.
 
 
-At this point, we can deselect some features that should not be part of this clusters. The list of common parent that appears below is automatically updated and we can choose the parent for this subcluster. In our case we keep all the features selected and we choose Storage as the parent. Once again, the FM is updated and as the two previous choices do not form a single tree, two trees are displayed side by side.
 
 
-The other available operation on a cluster is to select its parent within the cluster's features. The same operation is available on cliques. We consider the clique {Storage, License, Wiki, Hosting}. This time, to choose *Wiki* as the parent of the clique, we right-click on the feature and select the only option displayed.
 
 
-A popup window appears asking for the children of *Wiki*.
 
 
-We confirm the choice and the FM is updated resulting in a single tree.
 
 
-At this point of the synthesis, we start to recognize the hierarchy of the desired FM. Thus, we try to generate the rest of the hierarchy by selecting the *Complete FM* option in the synthesis menu.
 
 
-The result is not yet satisfactory. The heuristics we set at the beginning of the synthesis do not perform well on the other features. For example they propose *Programming Language* as the child of *Storage* instead of *Wiki*. 
 
-In that case, we can change the heuristics and the clustering threshold to influence the automated synthesis or we can continue to provide information by choosing or ignoring a parent in the remaining features. This example illustrates that synthesizing a FM is an iterative process. Moreover the order of the choices may differ from one user to another. We could adopt a top down approach by first defining the root and its descendants or a bottom up approach by first defining the leaves of the hierarchy and finally setting the root. We can also adopt an unordered approach like in our example. This diversity of approaches forces us to present all the pieces of information at the same time instead of presenting one feature at a time.
+
+
+
+
 
 #### Installation instructions 
 * Install [Play! framework](http://www.playframework.com/)
