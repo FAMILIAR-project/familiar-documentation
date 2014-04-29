@@ -112,32 +112,9 @@ This example illustrates that synthesizing a FM is an iterative process. Moreove
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Installation instructions 
 * Install [Play! framework](http://www.playframework.com/)
-* Download and extract [WebFML](TODO) __TODO : add link to archive of WebFML__
+* Download and extract [WebFML](http://people.rennes.inria.fr/Guillaume.Becan/downloads/WebFML-sources.zip)
 * Go to the extracted folder and start the server with *play run* command.
 * Open your favorite web browser and go to [localhost:9000](http://localhost:9000)
 * To use the heuristics based on [WordNet](http://wordnet.princeton.edu/), you need to install it on your machine and create a XML configuration file for [extJWNL](http://extjwnl.sourceforge.net/).
