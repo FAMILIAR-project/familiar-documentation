@@ -28,7 +28,7 @@ For the dump of English articles of April 2013, the extraction process took us 2
 For Wiktionary, we used the same process on a [Wiktionary dump](http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2).
 
 ### Executing the tests
-* Set the path to your WordNet and Wikipedia Miner properties files in [HeuristicLoader.java](https://github.com/gbecan/FOReverSE-KSynthesis/blob/master/Evaluation/src/foreverse/ksynthesis/evaluation/commons/HeuristicLoader.java) class (WIKIPEDIA_DB and WIKTIONARY_DB variables).
+* Set the path to your Wikipedia Miner properties files in [HeuristicLoader.java](https://github.com/gbecan/FOReverSE-KSynthesis/blob/master/Evaluation/src/foreverse/ksynthesis/evaluation/commons/HeuristicLoader.java) class (WIKIPEDIA_DB and WIKTIONARY_DB variables).
 * Run the JUnit tests in 
 [ESEEvaluation.java](https://github.com/gbecan/FOReverSE-KSynthesis/blob/master/Evaluation/src/foreverse/ksynthesis/evaluation/ese/ESEEvaluation.java), 
 * Have a long coffee break.
