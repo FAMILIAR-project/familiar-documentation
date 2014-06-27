@@ -2,22 +2,17 @@
 
 ## How to reproduce the experiments
 
-### Datasets
-* Download the two datasets (SPLOT and PCM) : [Datasets](https://github.com/FAMILIAR-project/familiar-documentation/blob/master/manual/ontologicalTutorial/datasets.zip).
+To reproduce the experiments you have to clone two github repositories:
+* [KSynthesis](https://github.com/gbecan/FOReverSE-KSynthesis) repository (version used: [ESE-evaluation](https://github.com/gbecan/FOReverSE-KSynthesis/releases/tag/ESE-evaluation)).
+* [FAMILIAR](https://github.com/FAMILIAR-project/familiar-language) (version used: [ESE-evaluation](https://github.com/FAMILIAR-project/familiar-language/releases/tag/ESE-evaluation))
 
-The SPLOT dataset contains 93 FMs encoded in _SXFM_ format.  
+The first repository contains the algorithms and heuristics for synthesizing a correct and meaningful FM. It also contains an __Evaluation__ project with the two FM datasets (SPLOT and PCM) and the necessary code to run the experiments.
+The second repository is a dependency for the algorithms.
+
+The SPLOT dataset contains 126 FMs encoded in _SXFM_ format.
 The PCM dataset contains 30 FMs encoded in _fmlbdd_ format.
 
-### Installing FAMILIAR
-To install FAMILIAR, you have to clone the git repository of the projet and compile it: [FAMILIAR](https://github.com/FAMILIAR-project/familiar-language)
-For our experiments we used the following version: https://github.com/FAMILIAR-project/familiar-language/commit/0e28c3add661d1063eb4c0be78ad7b603a22f2f3.
-
-To use heuristics based on WordNet and Wikipedia, you need to install additional files.
-
-#### Heuristics based on WordNet
-* Download and install WordNet 3.1 (the 3.0 version may produce errors with a particular FM): [WordNet](http://wordnet.princeton.edu/wordnet/download/current-version/).
-* Download the properties file that FAMILIAR will use to access WordNet: [wordnet_properties.xml](wordnet_properties.xml).
-* Set the path to WordNet **dict** folder inside the previous properties file.
+To use heuristics based on Wikipedia, you need to install additional files.
 
 #### Heuristics based on Wikipedia
 To access Wikipedia, we use the [Wikipedia Miner](http://wikipedia-miner.cms.waikato.ac.nz/) toolkit.
@@ -33,9 +28,9 @@ For the dump of English articles of April 2013, the extraction process took us 2
 For Wiktionary, we used the same process on a [Wiktionary dump](http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2).
 
 ### Executing the tests
-* Set the path to your WordNet and Wikipedia Miner properties files in [KSynthesisTest.java](https://github.com/FAMILIAR-project/familiar-language/blob/master/FAMILIAR/src/fr/unice/polytech/modalis/familiar/test/heuristics/KSynthesisTest.java) class (WORDNET_DB, WIKIPEDIA_DB and WIKTIONARY_DB variables).
+* Set the path to your WordNet and Wikipedia Miner properties files in [HeuristicLoader.java](https://github.com/gbecan/FOReverSE-KSynthesis/blob/master/Evaluation/src/foreverse/ksynthesis/evaluation/commons/HeuristicLoader.java) class (WIKIPEDIA_DB and WIKTIONARY_DB variables).
 * Run the JUnit tests in 
-[ICSE2014Experiment1.java](https://github.com/FAMILIAR-project/familiar-language/blob/master/FAMILIAR/src/fr/unice/polytech/modalis/familiar/test/heuristics/ICSE2014Experiment1.java), 
-[ICSE2014Experiment2.java](https://github.com/FAMILIAR-project/familiar-language/blob/master/FAMILIAR/src/fr/unice/polytech/modalis/familiar/test/heuristics/ICSE2014Experiment2.java) and 
-[ICSE2014Experiment3.java](https://github.com/FAMILIAR-project/familiar-language/blob/master/FAMILIAR/src/fr/unice/polytech/modalis/familiar/test/heuristics/ICSE2014Experiment2.java) classes.
-* Have a coffee break.
+[ESEEvaluation.java](https://github.com/gbecan/FOReverSE-KSynthesis/blob/master/Evaluation/src/foreverse/ksynthesis/evaluation/ese/ESEEvaluation.java), 
+* Have a long coffee break.
+* The results are in the output directory.
+* To analyze the results, we provide R scripts in [R-analysis folder](https://github.com/gbecan/FOReverSE-KSynthesis/tree/master/Evaluation/R-analysis). They produce summary files in the output directory.
